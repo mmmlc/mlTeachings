@@ -3,6 +3,9 @@
 ## Caret Cheatsheet
 https://github.com/rstudio/cheatsheets/raw/master/caret.pdf
 
+## Caret Manual
+https://topepo.github.io/caret/index.html
+
 ## Keras Cheatsheet
 https://github.com/rstudio/cheatsheets/raw/master/keras.pdf
 
