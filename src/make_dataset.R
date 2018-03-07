@@ -1,5 +1,5 @@
-library(tidyverse)
-library(mlbench)
+require(tidyverse)
+require(mlbench)
 
 n <- 1e3
 dim <- 2
