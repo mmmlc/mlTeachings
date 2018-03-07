@@ -1,4 +1,5 @@
 library(tidyverse)
+library(mlbench)
 
 n <- 1e3
 dim <- 2
