@@ -1,6 +1,6 @@
 source('src/lib.R')
-source('src/make_dataset.R')
-source('src/plot_models.R')
+source('src/overview/make_dataset.R')
+source('src/overview/plot_models.R')
 
 levels(res$class) = c("A","B")
 
@@ -22,5 +22,5 @@ y_pred = svm %>% predict(newdata = x_val, type = 'raw')
 
 confusionMatrix(y_pred, y_val$class)
 
-
+plot_models(svm, res)
 
