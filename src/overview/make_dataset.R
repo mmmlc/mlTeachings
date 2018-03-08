@@ -1,5 +1,4 @@
-require(tidyverse)
-require(mlbench)
+source('lib/lib.R')
 
 n <- 1e3
 dim <- 2
