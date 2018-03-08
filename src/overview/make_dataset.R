@@ -1,4 +1,4 @@
-source('lib/lib.R')
+source('src/lib.R')
 
 n <- 1e3
 dim <- 2
