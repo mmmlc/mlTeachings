@@ -1,4 +1,4 @@
-source('lib/lib.R')
+source('src/lib.R')
 source('src/make_dataset.R')
 source('src/plot_models.R')
 
