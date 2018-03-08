@@ -1,4 +1,4 @@
-source('lib/lib.R')
+source('src/lib.R')
 
 plot_models = function(model, ...){}
 
