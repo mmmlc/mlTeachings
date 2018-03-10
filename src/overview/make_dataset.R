@@ -1,6 +1,6 @@
 source('src/lib.R')
 
-n <- 1e3
+n <- 1e2
 dim <- 2
 
 make_circles <- function(n, ratio = 0.3, sd = 0.1) {
@@ -43,7 +43,8 @@ prepare_dataset <- function(df, type = NULL) {
 
 datasets <- list(
   "normal" = mlbench.2dnormals(n, sd = 0.3),
-  "make_circles" = make_circles(n, 0.3, 0.1)
+  "circles" = make_circles(n, 0.3, 0.1),
+  "spirals" = mlbench.spirals(n, 2, 0.1)
 )
 
 full_df <- lapply(
