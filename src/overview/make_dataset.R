@@ -26,6 +26,25 @@ make_circles <- function(n, ratio = 0.3, sd = 0.1) {
   )
 }
 
+make_linear_separable <- function(n, a = -1, b = 1) {
+  x <- matrix(
+    c(runif(n,0,1), runif(n,0,1)),
+    ncol = 2
+  )
+  classes <- ifelse(
+    a * x[,1] + b > x[,2],
+    1,
+    2
+  )
+  
+  return(
+    list(
+      x = x,
+      classes = classes
+    )
+  )
+}
+
 prepare_dataset <- function(df, type = NULL) {
   range01 <- function(x){(x-min(x))/(max(x)-min(x))}
   res <- data_frame(
@@ -44,7 +63,8 @@ prepare_dataset <- function(df, type = NULL) {
 datasets <- list(
   "normal" = mlbench.2dnormals(n, sd = 0.3),
   "circles" = make_circles(n, 0.3, 0.1),
-  "spirals" = mlbench.spirals(n, 2, 0.1)
+  "spirals" = mlbench.spirals(n, 2, 0.1),
+  "linear"  = make_linear_separable(n)
 )
 
 full_df <- lapply(
