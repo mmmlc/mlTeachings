@@ -84,16 +84,16 @@ get_full_dataset <- function() {
 #   geom_point() + facet_wrap(~type) + scale_color_fivethirtyeight() + theme_fivethirtyeight() +
 #   labs(color = "") + theme(legend.position = "none")
 # 
-# linear_df <- make_linear_separable(n) %>% prepare_dataset()
+linear_df <- make_linear_separable(n) %>% prepare_dataset()
 
 ### Prepare partition train / test
-# df <- linear_df
-# train_index <- createDataPartition(1:nrow(df), list = FALSE, p = 0.4)
-# df$type <- "test"
-# df[train_index,]$type <- "train"
-# 
-# train_df <- linear_df[train_index,]
-# test_df <- linear_df[-train_index,]
+df <- linear_df
+train_index <- createDataPartition(1:nrow(df), list = FALSE, p = 0.4)
+df$type <- "test"
+df[train_index,]$type <- "train"
+
+train_df <- linear_df[train_index,]
+test_df <- linear_df[-train_index,]
 # 
 # 
 # df %>% ggplot(aes(x = x, y = y, fill = class, alpha = type)) + geom_point(color = "black", shape = 21, size = 2) + 
