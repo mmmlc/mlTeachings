@@ -75,10 +75,36 @@ get_full_dataset <- function() {
     names(datasets),
     function(x) {prepare_dataset(datasets[[x]], x)}
   ) %>% bind_rows
-  
+
   return(full_df)
 }
 
+
+partition_data = function(get_dataset, seed = 1){
+  
+  dataset = list()
+  
+  set.seed(seed)
+  types = get_dataset %>% select(type) %>% unique %>% unlist
+  
+  for(tp in types){
+    
+    dataset[[tp]]$full = get_dataset %>% filter(type == tp)
+    
+    partition = dataset[[tp]]$full %>% nrow %>% seq_len %>% createDataPartition(times = 1, p = 0.8, list = F)
+    
+    dataset[[tp]]$x_train =  dataset[[tp]]$full %>% select(x,y) %>% slice(partition)
+    dataset[[tp]]$y_train =  dataset[[tp]]$full %>% select(class) %>% slice(partition)
+    
+    
+    dataset[[tp]]$x_val = dataset[[tp]]$full %>% select(x,y) %>% slice(-partition)
+    dataset[[tp]]$y_val = dataset[[tp]]$full %>% select(class) %>% slice(-partition)
+    
+  }
+  
+  return(dataset)
+  
+}
 
 # get_full_dataset() %>% ggplot(aes(x = x, y = y, color = class)) +
 #   geom_point() + facet_wrap(~type) + scale_color_fivethirtyeight() + theme_fivethirtyeight() +
