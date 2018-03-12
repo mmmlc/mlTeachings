@@ -30,7 +30,3 @@ plot_models = function(model, res, from = 0, to = 1, by = 0.005, breaks = 5, ...
   
   
 }
-
-
-
-plot_models(svm, res)
