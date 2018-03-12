@@ -60,37 +60,44 @@ prepare_dataset <- function(df, type = NULL) {
   return(res)
 }
 
-datasets <- list(
-  "normal" = mlbench.2dnormals(n, sd = 0.3),
-  "circles" = make_circles(n, 0.3, 0.1),
-  "spirals" = mlbench.spirals(n, 2, 0.1),
-  "linear"  = make_linear_separable(n)
-)
-
-full_df <- lapply(
-  names(datasets),
-  function(x) {prepare_dataset(datasets[[x]], x)}
-) %>% bind_rows
 
 
-full_df %>% ggplot(aes(x = x, y = y, color = class)) +
-  geom_point() + facet_wrap(~type) + scale_color_fivethirtyeight() + theme_fivethirtyeight() +
-  labs(color = "") + theme(legend.position = "none")
 
-linear_df <- make_linear_separable(n) %>% prepare_dataset()
+get_full_dataset <- function() {
+  datasets <- list(
+    "normal" = mlbench.2dnormals(n, sd = 0.3),
+    "circles" = make_circles(n, 0.3, 0.1),
+    "spirals" = mlbench.spirals(n, 2, 0.1),
+    "linear"  = make_linear_separable(n)
+  )
+  
+  full_df <- lapply(
+    names(datasets),
+    function(x) {prepare_dataset(datasets[[x]], x)}
+  ) %>% bind_rows
+  
+  return(full_df)
+}
+
+
+# get_full_dataset() %>% ggplot(aes(x = x, y = y, color = class)) +
+#   geom_point() + facet_wrap(~type) + scale_color_fivethirtyeight() + theme_fivethirtyeight() +
+#   labs(color = "") + theme(legend.position = "none")
+# 
+# linear_df <- make_linear_separable(n) %>% prepare_dataset()
 
 ### Prepare partition train / test
-df <- linear_df
-train_index <- createDataPartition(1:nrow(df), list = FALSE, p = 0.4)
-df$type <- "test"
-df[train_index,]$type <- "train"
-
-train_df <- linear_df[train_index,]
-test_df <- linear_df[-train_index,]
-
-
-df %>% ggplot(aes(x = x, y = y, fill = class, alpha = type)) + geom_point(color = "black", shape = 21, size = 2) + 
-  scale_alpha_manual(values = c("train" = 0.6, "test" = 1)) + theme_fivethirtyeight()
-
-
-train(train_df %>% select(x,y), train_df %>% pull(class), method = "knn", tuneGrid = expand.grid(k = 3))
+# df <- linear_df
+# train_index <- createDataPartition(1:nrow(df), list = FALSE, p = 0.4)
+# df$type <- "test"
+# df[train_index,]$type <- "train"
+# 
+# train_df <- linear_df[train_index,]
+# test_df <- linear_df[-train_index,]
+# 
+# 
+# df %>% ggplot(aes(x = x, y = y, fill = class, alpha = type)) + geom_point(color = "black", shape = 21, size = 2) + 
+#   scale_alpha_manual(values = c("train" = 0.6, "test" = 1)) + theme_fivethirtyeight()
+# 
+# 
+# train(train_df %>% select(x,y), train_df %>% pull(class), method = "knn", tuneGrid = expand.grid(k = 3))

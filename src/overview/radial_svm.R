@@ -2,7 +2,7 @@ source('src/lib.R')
 source('src/overview/make_dataset.R')
 source('src/overview/plot_models.R')
 
-levels(res$class) = c("A","B")
+res <- get_full_dataset() %>% filter(type == "linear")
 
 partition = res %>% nrow %>% seq_len %>% createDataPartition(times = 1, p = 0.8, list = F)
 
