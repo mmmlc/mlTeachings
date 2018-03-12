@@ -106,6 +106,7 @@ get_partitioned_df = function(get_dataset = get_full_dataset(), seed = 1){
   
   return(partitioned_df)
   
+<<<<<<< HEAD
 }
 
 
@@ -130,3 +131,6 @@ get_partitioned_df = function(get_dataset = get_full_dataset(), seed = 1){
 # 
 # 
 # train(train_df %>% select(x,y), train_df %>% pull(class), method = "knn", tuneGrid = expand.grid(k = 3))
+=======
+}
+>>>>>>> cac3878391e5f2341d8dc2a781482b5e09707c27
