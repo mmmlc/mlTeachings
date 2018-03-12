@@ -10,7 +10,7 @@ methods = c('svmRadial', 'svmLinear', 'qda', 'knn', 'rf', 'nb', 'ada' )
 data = get_partitioned_df()
 
 # train selected models ####
-model = train_models(methods = 'ada')
+model = train_models(methods = methods)
 
 #TODO plot side by side?
 # plot model of choice ####
