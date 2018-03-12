@@ -12,7 +12,7 @@ data = get_partitioned_df()
 # train selected models ####
 model = train_models(methods = 'ada')
 
-
+#TODO plot side by side?
 # plot model of choice ####
 plot_models(model$nb$spirals$model, data$spirals$full)
 
