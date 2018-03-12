@@ -32,7 +32,7 @@ make_linear_separable <- function(n, a = -1, b = 1) {
     ncol = 2
   )
   classes <- ifelse(
-    a * x[,1] + b > x[,2],
+    a * x[,1] + b < x[,2],
     1,
     2
   )
@@ -61,8 +61,6 @@ prepare_dataset <- function(df, type = NULL) {
 }
 
 
-
-
 get_full_dataset <- function() {
   datasets <- list(
     "normal" = mlbench.2dnormals(n, sd = 0.3),
@@ -79,32 +77,37 @@ get_full_dataset <- function() {
   return(full_df)
 }
 
-
-partition_data = function(get_dataset, seed = 1){
+get_partitioned_df = function(get_dataset = get_full_dataset(), seed = 1){
+  # browser()
+  partitioned_df = list()
   
-  dataset = list()
+  partitioned_df$full = get_dataset
   
   set.seed(seed)
-  types = get_dataset %>% select(type) %>% unique %>% unlist
+  types = get_dataset %>% dplyr::select(type) %>% unique %>% unlist
   
   for(tp in types){
     
-    dataset[[tp]]$full = get_dataset %>% filter(type == tp)
+    partitioned_df[[tp]]$full = get_dataset %>% filter(type == tp)
     
-    partition = dataset[[tp]]$full %>% nrow %>% seq_len %>% createDataPartition(times = 1, p = 0.8, list = F)
+    partition = partitioned_df[[tp]]$full %>% nrow %>% seq_len %>% createDataPartition(times = 1, p = 0.8, list = F)
     
-    dataset[[tp]]$x_train =  dataset[[tp]]$full %>% select(x,y) %>% slice(partition)
-    dataset[[tp]]$y_train =  dataset[[tp]]$full %>% select(class) %>% slice(partition)
+    partitioned_df[[tp]]$full_train =  partitioned_df[[tp]]$full %>% slice(partition)
     
+    partitioned_df[[tp]]$x_train =  partitioned_df[[tp]]$full %>% dplyr::select(x,y) %>% slice(partition)
+    partitioned_df[[tp]]$y_train =  partitioned_df[[tp]]$full %>% dplyr::select(class) %>% slice(partition)
     
-    dataset[[tp]]$x_val = dataset[[tp]]$full %>% select(x,y) %>% slice(-partition)
-    dataset[[tp]]$y_val = dataset[[tp]]$full %>% select(class) %>% slice(-partition)
+    partitioned_df[[tp]]$full_val =  partitioned_df[[tp]]$full %>% slice(-partition)
+    
+    partitioned_df[[tp]]$x_val = partitioned_df[[tp]]$full %>% dplyr::select(x,y) %>% slice(-partition)
+    partitioned_df[[tp]]$y_val = partitioned_df[[tp]]$full %>% dplyr::select(class) %>% slice(-partition)
     
   }
   
-  return(dataset)
+  return(partitioned_df)
   
 }
+
 
 # get_full_dataset() %>% ggplot(aes(x = x, y = y, color = class)) +
 #   geom_point() + facet_wrap(~type) + scale_color_fivethirtyeight() + theme_fivethirtyeight() +

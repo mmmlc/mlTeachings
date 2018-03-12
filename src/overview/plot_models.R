@@ -1,4 +1,9 @@
-plot_models = function(model, res, from = 0, to = 1, by = 0.005, breaks = 5, ...){
+plot_models = function(model,
+                       df,
+                       from = 0, to = 1,
+                       by = 0.005,
+                       breaks = 7,
+                       title = NULL, ...){
   
   grid = expand.grid(x = seq(from, to, by),
                      y = seq(from, to, by)
@@ -14,16 +19,18 @@ plot_models = function(model, res, from = 0, to = 1, by = 0.005, breaks = 5, ...
                     z = gridProb_b,
                     contour = gridProb)
   
-  ggplot() + ggtitle(model$method) +
+  if(is.null(title)){title = paste(model$method, df$type %>% unique(), sep = ' | ')}
+  
+  ggplot() + ggtitle(title) +
     geom_raster(data = grid, aes(x = x, y = y, fill = z), interpolate = T) +
     scale_fill_brewer(palette="RdYlBu") +
     # geom_contour(data = grid, aes(x = x, y = y, z = contour),
     #              bins = (breaks -1),
     #              colour = 'gray',
     #              size = 1) +
-    geom_point(data = res, aes(x = x, y = y),
+    geom_point(data = df, aes(x = x, y = y),
                color = 'black',
-               fill = ifelse(res$class == 'class_1', 'blue', 'red'),
+               fill = ifelse(df$class == 'class_1', 'blue', 'red'),
                shape = 21) +
     theme_fivethirtyeight() + labs(x = "", y = "", fill = "") +
     theme(legend.position = "none")
