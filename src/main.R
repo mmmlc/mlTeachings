@@ -14,7 +14,10 @@ model = train_models(methods = methods)
 
 #TODO plot side by side?
 # plot model of choice ####
-plot_models(model$rf$circles$model, data$circles$full_val)
+
+### remove full
+data[["full"]] <- NULL
+plot_models(data, model)
 
 # confusion matrix and other stats ####
 model$rf$spirals$confusion_matrix
