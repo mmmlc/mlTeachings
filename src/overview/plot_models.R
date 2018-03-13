@@ -52,11 +52,11 @@ plot_models <- function(data, model){
   
   ## plot data
   ggplot() + 
-    geom_raster(data = grid_df, aes(x = x, y = y, fill = prob), interpolate = T, alpha = 0.5) +
+    geom_raster(data = grid_df, aes(x = x, y = y, fill = prob), interpolate = T, alpha = 0.7) +
     scale_fill_gradient2(low = "blue", mid = "white",
                          high = "red", midpoint = 0.5, space = "rgb",
                          na.value = "grey50", guide = "colourbar") +
-    geom_point(data = data_df, aes(x = x, y = y, color = class, alpha = partition)) + 
+    geom_point(data = data_df, aes(x = x, y = y, fill = 1- (as.numeric(factor(class)) - 1), alpha = partition), shape = 21) + 
     scale_alpha_manual(values = c("train" = 0.6, "test" = 1)) +
     facet_grid(type ~ model) + 
     theme(legend.position = "none", panel.grid.minor = element_blank(),
