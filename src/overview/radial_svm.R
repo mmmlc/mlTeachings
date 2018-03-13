@@ -22,13 +22,13 @@ get_radialSvm_model <- function(x_train,
   return(model)
 }
 
-source('src/lib.R')
-source('src/overview/make_dataset.R')
-source('src/overview/plot_models.R')
-data = get_partitioned_df()
-
-model = get_radialSvm_model(data$normal$x_train,
-                            data$normal$y_train$class,
-                            data$normal$x_val,
-                            data$normal$y_val$class)
-
+# source('src/lib.R')
+# source('src/overview/make_dataset.R')
+# source('src/overview/plot_models.R')
+# data = get_partitioned_df()
+# 
+# model = get_radialSvm_model(data$normal$x_train,
+#                             data$normal$y_train$class,
+#                             data$normal$x_val,
+#                             data$normal$y_val$class)
+# 
