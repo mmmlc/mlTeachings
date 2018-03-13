@@ -77,7 +77,9 @@ get_full_dataset <- function() {
   return(full_df)
 }
 
-get_partitioned_df = function(get_dataset = get_full_dataset(), seed = 1){
+get_partitioned_df = function(get_dataset = get_full_dataset(),
+                              validationSplit = 0.8,
+                              seed = 1){
   # browser()
   partitioned_df = list()
   
@@ -90,7 +92,7 @@ get_partitioned_df = function(get_dataset = get_full_dataset(), seed = 1){
     
     partitioned_df[[tp]]$full = get_dataset %>% filter(type == tp)
     
-    partition = partitioned_df[[tp]]$full %>% nrow %>% seq_len %>% createDataPartition(times = 1, p = 0.8, list = F)
+    partition = partitioned_df[[tp]]$full %>% nrow %>% seq_len %>% createDataPartition(times = 1, p = validationSplit, list = F)
     
     partitioned_df[[tp]]$full_train =  partitioned_df[[tp]]$full %>% slice(partition)
     
