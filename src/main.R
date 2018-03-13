@@ -4,7 +4,7 @@ source('src/overview/train_models.R')
 source('src/overview/plot_models.R')
 
 
-methods = c('svmRadial', 'svmLinear', 'qda', 'knn', 'rf', 'nb', 'ada' )
+methods = c('svmRadial', 'svmLinear', 'qda', 'knn', 'rf', 'nb')
 # 'logreg', 'adaboost'
 
 data = get_partitioned_df()
