@@ -1,26 +1,33 @@
-source('src/lib.R')
-source('src/overview/make_dataset.R')
-source('src/overview/plot_models.R')
-
-levels(res$class) = c("A","B")
-
-partition = res %>% nrow %>% seq_len %>% createDataPartition(times = 1, p = 0.8, list = F)
-
-x_train = res %>% select(x,y) %>% slice(partition)
-y_train = res %>% select(class) %>% slice(partition)
+get_linearSvm_model <- function(x_train,
+                                y_train,
+                                x_val = NULL,
+                                y_val = NULL){
 
 
-x_val = res %>% select(x,y) %>% slice(-partition)
-y_val = res %>% select(class) %>% slice(-partition)
+  model = list()
+  
+  model$model = train(x = x_train,
+                      y = y_train,
+                      method = 'svmLinear',
+                      trControl = trainControl(classProbs =  TRUE))
+  
+  if(!is.null(x_val) & !is.null(y_val)){
+  
+  model$y_class = model$model %>% predict(newdata = x_val, type = 'raw')
+  model$y_prob = model$model %>% predict(newdata = x_val, type = 'prob')
+  model$confusionMatrix = confusionMatrix(model$y_class, y_val)
+  model$y_class = model$y_class %>% as_data_frame()
+  }
+  
+  return(model)
+}
 
-svm = train(x = x_train, y = y_train$class,
-            method = 'svmLinear',
-            trControl = trainControl(classProbs =  TRUE))
-
-y_pred = svm %>% predict(newdata = x_val, type = 'raw')
-
-
-confusionMatrix(y_pred, y_val$class)
-
-plot_models(svm, res)
-
+# source('src/lib.R')
+# source('src/overview/make_dataset.R')
+# source('src/overview/plot_models.R')
+# data = get_partitioned_df()
+# 
+# model = get_linearSvm_model(data$normal$x_train,
+#                             data$normal$y_train$class,
+#                             data$normal$x_val,
+#                             data$normal$y_val$class)

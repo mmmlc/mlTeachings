@@ -1,25 +1,34 @@
+get_qda_model <- function(x_train,
+                                y_train,
+                                x_val = NULL,
+                                y_val = NULL){
+  
+  
+  model = list()
+  
+  model$model = train(x = x_train,
+                      y = y_train,
+                      method = 'svmRadial',
+                      trControl = trainControl(classProbs =  TRUE))
+  
+  if(!is.null(x_val) & !is.null(y_val)){
+    
+    model$y_class = model$model %>% predict(newdata = x_val, type = 'raw')
+    model$y_prob = model$model %>% predict(newdata = x_val, type = 'prob')
+    model$confusionMatrix = confusionMatrix(model$y_class, y_val)
+    model$y_class = model$y_class %>% as_data_frame()
+  }
+  
+  return(model)
+}
+
 source('src/lib.R')
 source('src/overview/make_dataset.R')
 source('src/overview/plot_models.R')
+data = get_partitioned_df()
 
-levels(res$class) = c("A","B")
+model = get_qda_model(data$normal$x_train,
+                      data$normal$y_train$class,
+                      data$normal$x_val,
+                      data$normal$y_val$class)
 
-partition = res %>% nrow %>% seq_len %>% createDataPartition(times = 1, p = 0.8, list = F)
-
-x_train = res %>% select(x,y) %>% slice(partition)
-y_train = res %>% select(class) %>% slice(partition)
-
-
-x_val = res %>% select(x,y) %>% slice(-partition)
-y_val = res %>% select(class) %>% slice(-partition)
-
-qda = train(x = x_train, y = y_train$class,
-            method = 'qda',
-            trControl = trainControl(classProbs =  TRUE))
-
-y_pred = qda %>% predict(newdata = x_val, type = 'raw')
-qda %>% predict(newdata = x_val, type = 'prob')
-
-confusionMatrix(y_pred, y_val$class)
-
-plot_models(svm, res)
