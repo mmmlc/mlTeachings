@@ -4,13 +4,18 @@ source('src/overview/train_models.R')
 source('src/overview/plot_models.R')
 
 
-methods = c('svmRadial', 'svmLinear', 'qda', 'knn', 'rf', 'nb')
+methods = list('linearSvm' = get_linearSvm_model,
+               'radialSvm' = get_radialSvm_model,
+               'qda' = get_qda_model,
+               'knn' = get_knn_model
+)
+
 # 'logreg', 'adaboost'
 
 data = get_partitioned_df()
 
 # train selected models ####
-model = train_models(methods = methods)
+model = train_models(methods = methods, data)
 
 #TODO plot side by side?
 # plot model of choice ####
