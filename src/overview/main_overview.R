@@ -8,13 +8,14 @@ methods = list('logReg' = get_logisticRegression_model,
                'qda' = get_qda_model,
                'knn' = get_knn_model,
                'rf' = get_rf_model,
-               'dt' = get_decision_tree_model
+               'dt' = get_decision_tree_model,
+               'gaussProcess' = get_gaussianProcess_model
                )
 
 
 # 'logreg', 'adaboost'
 
-# methods = list('xxx' = get_decision_tree_model)
+# methods = list('xxx' = get_gaussianProcess_model)
 
 # train selected models ####
 model = train_models(methods = methods)
@@ -23,6 +24,8 @@ model = train_models(methods = methods)
 
 data = get_partitioned_df(include_full = F)
 plot_models(data, model)
+
+model$xxx$normal$model
 
 model$glm$normal$y_prob
 

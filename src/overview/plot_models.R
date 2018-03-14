@@ -1,4 +1,7 @@
 plot_models <- function(data, model){
+  
+  # browser()
+  
   ## Prepare plot dataset
   data_df <- lapply(
     names(data),

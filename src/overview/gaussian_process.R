@@ -8,17 +8,19 @@ get_gaussianProcess_model <- function(x_train,
   
   model = list()
   
-  model$model = kernlab::gausspr(x = x_train,
+  model$model$finalModel = kernlab::gausspr(x = x_train,
                                  y = y_train
   )
   
   if(!is.null(x_val) & !is.null(y_val)){
     
-    model$y_class = model$model %>% predict(newdata = x_val, type = 'response')
-    model$y_prob = model$model %>% predict(newdata = x_val, type = 'probabilities')
+    model$y_class = model$model$finalModel %>% predict(newdata = x_val, type = 'response')
+    model$y_prob = model$model$finalModel %>% predict(newdata = x_val, type = 'probabilities')
     model$confusionMatrix = confusionMatrix(model$y_class, y_val)
     model$y_class = model$y_class %>% as_data_frame()
   }
+  
+  model$model$method = 'gaussprLinear'
   
   return(model)
 }
@@ -31,4 +33,11 @@ get_gaussianProcess_model <- function(x_train,
 # gaussProcess = kernlab::gausspr(x = data$normal$x_train,
 #                                 y = data$normal$y_train$class)
 # gaussProcess %>% predict(data$normal$x_val, type = 'response')
-gaussProcess %>% predict(data$normal$x_val, type = 'probabilities') %>% class
+# gaussProcess %>% predict(data$normal$x_val, type = 'probabilities') %>% class
+# 
+# model$xxx$normal$model %>% predict(data$normal$x_val, type = 'probabilities') %>% class
+
+qq = get_gaussianProcess_model(x_train = data$normal$x_train, y_train = data$normal$y_train$class)
+
+qq = model$xxx$normal$model %>% predict(data$normal$x_val, type = 'probabilities')
+
