@@ -35,17 +35,18 @@ Our focus is on classification
 	* there are many other techniques
 		* plot all the rasters together
 
-3.1) **bonus** Theme of higher dimensionality:
+3.1. **bonus** Theme of higher dimensionality:
 	* even the simplest problem has more than two dimensions
 	* titanic dataset example
 		
-4) Machine learning is nothing new:
+4. Machine learning is nothing new:
 	* Evolution of algorithms
 
-5) ML is greedy
-	* we don't care about p-values and similar bullshit, rather we want the best model for the task
-		* what does "best model" actually mean?
-		* How to find the best among many? Visualization can give some qualitative suggestions but...
+5. ML is greedy
+	* we don't care about p-values, stepwise variable selection. AIC BIC and similar bullshits, rather we want the best model for the task
+	* what does "best model" actually mean?
+	* How to find the best among many? Visualization can give some qualitative suggestions but...
+	* what about overfitting
 		* See you next time!
 	
 6) others (?)
