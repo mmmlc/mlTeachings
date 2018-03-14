@@ -1,17 +1,22 @@
 # mlTeachings
 
-## Caret Cheatsheet
+## ML
+### In R
+#### Caret Cheatsheet
 https://github.com/rstudio/cheatsheets/raw/master/caret.pdf
-
-## Caret Manual
+#### Caret Manual
 https://topepo.github.io/caret/index.html
+### References
+http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Seventh%20Printing.pdf
 
-## Keras Cheatsheet
-https://github.com/rstudio/cheatsheets/raw/master/keras.pdf
-
-## NNets in R
+## NNets
+### In R
 https://tensorflow.rstudio.com/
 https://keras.rstudio.com/
+#### Keras Cheatsheet
+https://github.com/rstudio/cheatsheets/raw/master/keras.pdf
+### References
+http://www.deeplearningbook.org/
 
 ## Random
 install.packages('cowsay)
