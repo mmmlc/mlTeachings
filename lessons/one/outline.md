@@ -1,5 +1,9 @@
 # Outline
 
+0. A modern approach to the R programming language
+	* pipe operator
+	* tidyverse
+
 1. What is ML about
 	* supervised **we focus on this**
 	* unsupervised
