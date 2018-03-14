@@ -37,7 +37,7 @@ plot_models <- function(data, model){
       print(data_name)
       new_data_df <- grid_df[grid_df$model == model_name & grid_df$type == data_name,] %>% select(x,y)
       predict_type <- "probabilities"
-      if(model[[model_name]][[data_name]]$model$method %in% c("knn", "rf")) {
+      if(model[[model_name]][[data_name]]$model$method %in% c("knn", "rf", "rpart")) {
         predict_type <- "prob"
       }
       if(model[[model_name]][[data_name]]$model$method %in% c('glm')) {
