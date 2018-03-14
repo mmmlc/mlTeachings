@@ -40,7 +40,7 @@ plot_models <- function(data, model){
       if(model_name %in% c("knn", "rf")) {
         predict_type <- "prob"
       }
-      prob <- predict(model[[model_name]][[data_name]]$model$finalModel, newdata = small_df, type = predict_type)
+      prob <- predict(model[[model_name]][[data_name]]$model$finalModel, newdata = new_data_df, type = predict_type)
       if(is.matrix(prob)) {
         prob <- prob[,1]
       } else {
