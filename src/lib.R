@@ -4,6 +4,7 @@ require(keras)
 require(mlbench)
 require(ggthemes)
 require(assertthat)
+require(kernlab) 
 
 source('src/overview/make_dataset.R')
 
