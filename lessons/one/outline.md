@@ -47,6 +47,6 @@ Our focus is on classification
 	* what does "best model" actually mean?
 	* How to find the best among many? Visualization can give some qualitative suggestions but...
 	* what about overfitting
-		* See you next time!
+	* See you next time!
 	
 6) others (?)
