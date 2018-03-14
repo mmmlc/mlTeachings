@@ -79,11 +79,12 @@ get_full_dataset <- function() {
 
 get_partitioned_df = function(get_dataset = get_full_dataset(),
                               validationSplit = 0.8,
+                              include_full = T,
                               seed = 1){
   # browser()
   partitioned_df = list()
   
-  partitioned_df$full = get_dataset
+  if(include_full){partitioned_df$full = get_dataset}
   
   set.seed(seed)
   types = get_dataset %>% dplyr::select(type) %>% unique %>% unlist
