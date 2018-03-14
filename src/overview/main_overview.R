@@ -29,4 +29,5 @@ model$glm$normal$y_prob
 # confusion matrix and other stats ####
 model$rf$spirals$confusion_matrix
 
+get_gaussianProcess_model(x_train = data$normal$x_train, y_train = data$normal$y_train)
 
