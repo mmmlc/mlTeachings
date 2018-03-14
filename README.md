@@ -19,6 +19,7 @@
     http://www.deeplearningbook.org/
 
 ## Random
+
 ```r
 install.packages('cowsay)
 
@@ -30,4 +31,6 @@ someone_say_hello <- function() {
 }
 
 someone_say_hello()
-'''
+
+```
+
