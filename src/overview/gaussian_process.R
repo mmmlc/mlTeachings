@@ -1,15 +1,13 @@
-##ci sto lavorando!
-
 get_gaussianProcess_model <- function(x_train,
-                                y_train,
-                                x_val = NULL,
-                                y_val = NULL){
+                                      y_train,
+                                      x_val = NULL,
+                                      y_val = NULL){
   
   
   model = list()
   
   model$model$finalModel = kernlab::gausspr(x = x_train,
-                                 y = y_train
+                                            y = y_train
   )
   
   if(!is.null(x_val) & !is.null(y_val)){
@@ -25,19 +23,4 @@ get_gaussianProcess_model <- function(x_train,
   return(model)
 }
 
-# train(x = x_train,
-#       y = y_train,
-#       method = 'gaussprLinear',
-#       trControl = trainControl(classProbs =  TRUE))
-# 
-# gaussProcess = kernlab::gausspr(x = data$normal$x_train,
-#                                 y = data$normal$y_train$class)
-# gaussProcess %>% predict(data$normal$x_val, type = 'response')
-# gaussProcess %>% predict(data$normal$x_val, type = 'probabilities') %>% class
-# 
-# model$xxx$normal$model %>% predict(data$normal$x_val, type = 'probabilities') %>% class
-
-qq = get_gaussianProcess_model(x_train = data$normal$x_train, y_train = data$normal$y_train$class)
-
-qq = model$xxx$normal$model %>% predict(data$normal$x_val, type = 'probabilities')
 
