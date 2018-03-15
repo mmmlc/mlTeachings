@@ -2,7 +2,11 @@ train_models = function(methods,
                         data = get_partitioned_df()){
 
   model = list()
-  df_types = data$full %>% dplyr::select(type) %>% unique %>% unlist %>% drop
+  # df_types = data$full %>% dplyr::select(type) %>% unique %>% unlist %>% drop
+  
+  if(names(df)[1] == 'full'){df_types = names(df)[-1]} else {df_types = names(df)}
+  
+  
   
   for(type in df_types){
     

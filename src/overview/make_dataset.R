@@ -80,15 +80,19 @@ get_full_dataset <- function() {
 get_partitioned_df = function(get_dataset = get_full_dataset(),
                               validationSplit = 0.8,
                               include_full = T,
-                              seed = 1){
+                              seed = 1,
+                              types = NULL
+                              ){
   # browser()
   partitioned_df = list()
   
   if(include_full){partitioned_df$full = get_dataset}
   
   set.seed(seed)
-  types = get_dataset %>% dplyr::select(type) %>% unique %>% unlist
   
+  if(is.null(types)){
+  types = get_dataset %>% dplyr::select(type) %>% unique %>% unlist
+  }
   for(tp in types){
     
     partitioned_df[[tp]]$full = get_dataset %>% filter(type == tp)
