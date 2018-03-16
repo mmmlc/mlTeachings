@@ -4,7 +4,7 @@ train_models = function(methods,
   model = list()
   # df_types = data$full %>% dplyr::select(type) %>% unique %>% unlist %>% drop
   
-  if(names(df)[1] == 'full'){df_types = names(df)[-1]} else {df_types = names(df)}
+  if(names(data)[1] == 'full'){df_types = names(data)[-1]} else {df_types = names(data)}
   
   
   
