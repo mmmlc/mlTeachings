@@ -1,6 +1,5 @@
 plot_models <- function(data, model){
   
-  # browser()
   
   ## Prepare plot dataset
   data_df <- lapply(
@@ -57,6 +56,12 @@ plot_models <- function(data, model){
       grid_df[grid_df$model == model_name & grid_df$type == data_name,]$prob <- prob
     }
   }
+  
+  ## set ordering on models & data
+  grid_df$model <- factor(grid_df$model, levels = names(model))
+  data_df$model <- factor(data_df$model, levels = names(model))
+  grid_df$type <- factor(grid_df$type, levels = names(data))
+  data_df$type <- factor(data_df$type, levels = names(data))
   
   ## plot data
   ggplot() + 
