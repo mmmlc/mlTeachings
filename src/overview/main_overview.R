@@ -4,13 +4,13 @@ methods = list()
 
 methods = list('logReg' = get_logisticRegression_model,
                'linearSvm' = get_linearSvm_model,
-               'radialSvm' = get_radialSvm_model,
                'polynomialSvm' = get_polySvm_model,
+               'radialSvm' = get_radialSvm_model,
                'qda' = get_qda_model,
+               'gaussProcess' = get_gaussianProcess_model,
                'knn' = get_knn_model,
-               'rf' = get_rf_model,
                'dt' = get_decision_tree_model,
-               'gaussProcess' = get_gaussianProcess_model
+               'rf' = get_rf_model
                )
 
 
