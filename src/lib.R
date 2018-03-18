@@ -13,6 +13,7 @@ source('src/overview/plot_models.R')
 
 source('src/overview/linear_svm.R')
 source('src/overview/radial_svm.R')
+source('src/overview/polynomial_svm.R')
 source('src/overview/qda.R')
 source('src/overview/knn.R')
 source('src/overview/rf.R')

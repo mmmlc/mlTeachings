@@ -5,6 +5,7 @@ methods = list()
 methods = list('logReg' = get_logisticRegression_model,
                'linearSvm' = get_linearSvm_model,
                'radialSvm' = get_radialSvm_model,
+               'polynomialSvm' = get_polySvm_model,
                'qda' = get_qda_model,
                'knn' = get_knn_model,
                'rf' = get_rf_model,
