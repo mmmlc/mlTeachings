@@ -37,7 +37,7 @@ info %>% names %>% length
 
 
 ```{r dataset}
-data_name = 'circles'
+data_name = 'spirals'
 
 
 get_full_dataset() %>% filter(type == data_name) %>% ggplot(aes(x = x, y = y, color = class)) +
