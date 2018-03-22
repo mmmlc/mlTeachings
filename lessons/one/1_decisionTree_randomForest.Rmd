@@ -64,7 +64,7 @@ model = train(y = df$spirals$y_train$class,
 ```
 
 ```{r model structure 2}
-fancyRpartPlot(model$finalModel, palettes = c('Reds', 'Blues'))
+fancyRpartPlot(model$finalModel, palettes = c('Reds', 'Blues'), sub = "")
 ```
 
 
@@ -124,7 +124,7 @@ model = train(y = df$spirals$y_train$class,
 ```
 
 ```{r}
-fancyRpartPlot(model$finalModel, palettes = c('Reds', 'Blues'))
+fancyRpartPlot(model$finalModel, palettes = c('Reds', 'Blues'), sub = "")
 ```
 
 ```{r plot, echo=FALSE}
