@@ -1,6 +1,8 @@
 ---
 title: "Decision Trees and Random Forests"
-output: html_document
+output: 
+  html_document:
+    code_folding: show
 ---
 
 ```{r setup, include=FALSE}
