@@ -39,12 +39,13 @@ plot_models <- function(data, model){
       print(data_name)
       new_data_df <- grid_df[grid_df$model == model_name & grid_df$type == data_name,] %>% select(x,y)
       predict_type <- "probabilities"
-      if(model[[model_name]][[data_name]]$model$method %in% c("knn", "rf", "rpart")) {
+      if(model[[model_name]][[data_name]]$model$method %in% c("kknn", "rf", "rpart")) {
         predict_type <- "prob"
       }
       if(model[[model_name]][[data_name]]$model$method %in% c('glm')) {
         predict_type <- "response"
       }
+      print(predict_type)
       prob <- predict(model[[model_name]][[data_name]]$model$finalModel, newdata = new_data_df, type = predict_type)
       if(is.numeric(prob)){
         prob

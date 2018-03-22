@@ -24,7 +24,9 @@ get_knn_model <- function(x_train,
   
   model$model = train(x = x_train,
                       y = y_train,
-                      method = 'knn',
+                      method = 'kknn',
+                      ks = 3,
+                      tuneGrid = data.frame(kmax = 1, kernel = "inv", distance = 2),
                       trControl = trainControl(classProbs =  TRUE))
   
   if(!is.null(x_val) & !is.null(y_val)){

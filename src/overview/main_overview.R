@@ -11,12 +11,7 @@ methods = list('logReg' = get_logisticRegression_model,
                'knn' = get_knn_model,
                'dt' = get_decision_tree_model,
                'rf' = get_rf_model
-               )
-
-
-# 'logreg', 'adaboost'
-
-# methods = list('xxx' = get_gaussianProcess_model)
+)
 
 # train selected models ####
 model = train_models(methods = methods)
@@ -26,12 +21,4 @@ model = train_models(methods = methods)
 data = get_partitioned_df(include_full = F)
 plot_models(data, model)
 
-model$xxx$normal$model
-
-model$glm$normal$y_prob
-
-# confusion matrix and other stats ####
-model$rf$spirals$confusion_matrix
-
-get_gaussianProcess_model(x_train = data$normal$x_train, y_train = data$normal$y_train)
 
