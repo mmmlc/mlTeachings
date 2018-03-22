@@ -37,7 +37,7 @@ info %>% names %>% length
 
 
 ```{r dataset}
-data_name = 'spirals'
+data_name = 'circles'
 
 
 get_full_dataset() %>% filter(type == data_name) %>% ggplot(aes(x = x, y = y, color = class)) +
@@ -57,8 +57,8 @@ hyperparameters = data.frame('maxdepth' = maxdepth)
 ```
 
 ```{r model fit 2}
-model = train(y = df$spirals$y_train$class,
-           x = df$spirals$x_train,
+model = train(y = df[[data_name]]$y_train$class,
+           x = df[[data_name]]$x_train,
            method = algorithm,
            tuneGrid = hyperparameters,
            trControl = trainControl(method = 'boot')
@@ -117,8 +117,8 @@ hyperparameters = data.frame('maxdepth' = maxdepth)
 ```
 
 ```{r model fit}
-model = train(y = df$spirals$y_train$class,
-           x = df$spirals$x_train,
+model = train(y = df[[data_name]]$y_train$class,
+           x = df[[data_name]]$x_train,
            method = algorithm,
            tuneGrid = hyperparameters,
            trControl = trainControl(method = 'boot')
@@ -129,73 +129,11 @@ model = train(y = df$spirals$y_train$class,
 fancyRpartPlot(model$finalModel, palettes = c('Reds', 'Blues'), sub = "")
 ```
 
-```{r plot, echo=FALSE}
+```{r plot}
+
   ### prepare prediction
 
   from <- 0
-  to <- 1
-  n <- 100
-  grid_df <- expand.grid(
-    x = seq(from, to, length.out = n),
-    y = seq(from, to, length.out = n)
-  )
-  
-  grid_df$prob = model %>% predict(grid_df %>% select(x,y), type = 'prob') %>% select(prob = class_1)
-  
-  ## Prepare plot dataset
-  
-  data_df <- lapply(
-    data_name,
-    function(data_name) {
-      df <- df[[data_name]] 
-      rbind(
-        df$full_train %>% mutate(partition = "train"),
-        df$full_val %>% mutate(partition = "val")
-      )
-    }
-  ) %>% bind_rows
-  
-  ## plot data
-  ggplot() + 
-    geom_raster(data = grid_df, aes(x = x, y = y, fill = prob), interpolate = T, alpha = 0.7) +
-    scale_fill_gradient2(low = "blue", mid = "white",
-                         high = "red", midpoint = 0.5, space = "rgb",
-                         na.value = "grey50", guide = "colourbar") +
-    geom_point(data = data_df, aes(x = x, y = y, fill = 1- (as.numeric(factor(class)) - 1), alpha = partition), shape = 21) +
-    scale_alpha_manual(values = c("train" = 0.6, "test" = 1)) +
-    theme_minimal() +
-    theme(legend.position = "none")
-
-```
-
-## Random Forest
-
-```{r}
-algorithm = 'rf'
-  
-info[[algorithm]]$parameters
-  
-mtry = 1
-  
-hyperparameters = data.frame('mtry' = mtry)
-```
-
-
-```{r echo = FALSE}
-  model = train(y = df$spirals$y_train$class,
-                x = df$spirals$x_train,
-                method = algorithm,
-                tuneGrid = hyperparameters,
-                trControl = trainControl(method = 'boot')
-  )
-```
-
-```{r echo =FALSE}
-plot(model$finalModel)
-```
-
-```{r echo = FALSE}
-from <- 0
   to <- 1
   n <- 100
   grid_df <- expand.grid(
@@ -231,7 +169,73 @@ from <- 0
 
 ```
 
-## Tweak hHyperparameters
+## Random Forest
+
+```{r}
+algorithm = 'rf'
+  
+info[[algorithm]]$parameters
+  
+mtry = 1
+  
+hyperparameters = data.frame('mtry' = mtry)
+```
+
+
+```{r }
+  model = train(y = df[[data_name]]$y_train$class,
+                x = df[[data_name]]$x_train,
+                method = algorithm,
+                tuneGrid = hyperparameters,
+                trControl = trainControl(method = 'boot')
+  )
+```
+
+```{r}
+plot(model$finalModel)
+```
+
+```{r}
+  
+  ### prepare prediction
+
+  from <- 0
+  to <- 1
+  n <- 100
+  grid_df <- expand.grid(
+    x = seq(from, to, length.out = n),
+    y = seq(from, to, length.out = n)
+  )
+  
+  grid_df$prob = model %>% predict(grid_df %>% select(x,y), type = 'prob') %>% select(prob = class_1)
+  
+  ## Prepare plot dataset
+  
+  data_df <- lapply(
+    data_name,
+    function(data_name) {
+      df <- df[[data_name]] 
+      rbind(
+        df$full_train %>% mutate(partition = "train"),
+        df$full_val %>% mutate(partition = "val")
+      )
+    }
+  ) %>% bind_rows
+  
+  ## plot data
+  ggplot() + 
+    geom_raster(data = grid_df, aes(x = x, y = y, fill = prob), interpolate = T, alpha = 0.7) +
+    scale_fill_gradient2(low = "blue", mid = "white",
+                         high = "red", midpoint = 0.5, space = "rgb",
+                         na.value = "grey50", guide = "colourbar") +
+    geom_point(data = data_df, aes(x = x, y = y, fill = 1- (as.numeric(factor(class)) - 1), alpha = partition), shape = 21) +
+    scale_alpha_manual(values = c("train" = 0.6, "test" = 1)) +
+    theme_bw() + ggtitle(model$method %>% toupper) +
+    theme(legend.position = "none")
+
+```
+
+## Tweak Hyperparameters
 
 ```{r}
 mtry = seq_len(10)
@@ -240,22 +244,24 @@ hyperparameters = data.frame('mtry' = mtry)
 ```
 
 
-```{r echo = FALSE}
-  model = train(y = df$spirals$y_train$class,
-                x = df$spirals$x_train,
+```{r}
+  model = train(y = df[[data_name]]$y_train$class,
+                x = df[[data_name]]$x_train,
                 method = algorithm,
                 tuneGrid = hyperparameters,
                 trControl = trainControl(method = 'boot')
   )
 ```
 
-```{r echo =FALSE}
+```{r}
 plot(model)
 plot(model$finalModel)
 ```
 
-```{r echo = FALSE}
-from <- 0
+```{r}
+  ### prepare prediction
+
+  from <- 0
   to <- 1
   n <- 100
   grid_df <- expand.grid(

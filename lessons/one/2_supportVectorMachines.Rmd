@@ -1,0 +1,259 @@
+---
+title: "Support Vector Machines"
+output: 
+  html_document:
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE )
+knitr::opts_knit$set(root.dir = '../..')
+```
+
+Prior beginning, source all the required dependencies.
+
+```{r load dependencies}
+source('src/lib.R')
+```
+
+***
+TODO: insert comments
+
+***
+
+## R Markdown
+
+Get the data
+
+```{r get dataframe}
+df = get_partitioned_df()
+```
+
+```{r model info}
+info = getModelInfo()
+info %>% names %>% head
+info %>% names %>% length
+```
+
+
+```{r dataset}
+data_name = 'spirals'
+
+
+get_full_dataset() %>% filter(type == data_name) %>% ggplot(aes(x = x, y = y, color = class)) +
+  scale_fill_discrete() + geom_point(size = 2) + theme_bw() + ggtitle(data_name %>% toupper)
+```
+We firt try a polinomial kernel
+$$f(x) = \beta_0 +  \sum_{i \in S}\alpha_iK(x_i, x_{i'})$$
+where:
+
+* $S$ is the number of support vectors (i.e. points in the d-dimensional hyperspace)
+
+* $\beta_0$ is the *offset* parameter ( = 0 in the implementation of svmPoly)
+
+* $\alpha_i$ is the *scale* parameter 
+
+* $K(x_i, x_{i'}) = (1+\sum_{j=1}^{p}x_{ij}x_{i'j})^d$ is the *polinomial kernel*
+
+
+```{r hyperparameters}
+
+algorithm = 'svmPoly'
+
+info[[algorithm]]$parameters
+
+degree = 1
+scale = 1
+cost = 1
+
+hyperparameters = data.frame('degree' = degree,
+                             'scale' = scale,
+                             'C' = cost)
+
+```
+
+C is the *cost* parameter: the higher, the lower the tolerance of misclassified points. If too high, this may result in overfitting the data, conversely into bad predictions.
+
+#TODO add citation for the pic below
+
+![A support vector classifier was fit using four different values of the tuning parameter C . The largest value of C was used in the top left panel, and smaller values were used in the top right, bottom left, and bottom right panels. When C is large, then there is a high tolerance for observations being on the wrong side of the margin, and so the margin will be large. As C decreases, the tolerance for observations being on the wrong side of the margin decreases, and the margin narrows.](../fig/cost_parameter_svm.png)
+
+```{r model fit 2}
+model = train(y = df[[data_name]]$y_train$class,
+           x = df[[data_name]]$x_train,
+           method = algorithm,
+           tuneGrid = hyperparameters,
+           trControl = trainControl(method = 'boot',
+                                    classProbs =  TRUE)
+           )
+```
+
+
+
+```{r plot 2,}
+
+  ### prepare prediction
+
+  from <- 0
+  to <- 1
+  n <- 100
+  grid_df <- expand.grid(
+    x = seq(from, to, length.out = n),
+    y = seq(from, to, length.out = n)
+  )
+  
+  grid_df$prob = model %>% predict(grid_df %>% select(x,y), type = 'prob') %>% select(prob = class_1)
+  
+  ## Prepare plot dataset
+  
+  data_df <- lapply(
+    data_name,
+    function(data_name) {
+      df <- df[[data_name]] 
+      rbind(
+        df$full_train %>% mutate(partition = "train"),
+        df$full_val %>% mutate(partition = "val")
+      )
+    }
+  ) %>% bind_rows
+  
+  ## plot data
+  ggplot() + 
+    geom_raster(data = grid_df, aes(x = x, y = y, fill = prob), interpolate = T, alpha = 0.7) +
+    scale_fill_gradient2(low = "blue", mid = "white",
+                         high = "red", midpoint = 0.5, space = "rgb",
+                         na.value = "grey50", guide = "colourbar") +
+    geom_point(data = data_df, aes(x = x, y = y, fill = 1- (as.numeric(factor(class)) - 1), alpha = partition), shape = 21) +
+    scale_alpha_manual(values = c("train" = 0.6, "test" = 1)) +
+    theme_bw() + ggtitle(model$method %>% toupper) +
+    theme(legend.position = "none")
+
+```
+
+## Tweak Hyperparameters
+```{r}
+degree = 3
+scale = 0.33
+cost = 3
+
+hyperparameters = data.frame('degree' = degree,
+                             'scale' = scale,
+                             'C' = cost)
+```
+
+```{r model fit}
+model = train(y = df[[data_name]]$y_train$class,
+           x = df[[data_name]]$x_train,
+           method = algorithm,
+           tuneGrid = hyperparameters,
+           trControl = trainControl(method = 'boot',
+                                    classProbs =  TRUE)
+           )
+```
+
+
+```{r plot, echo=FALSE}
+  ### prepare prediction
+
+  from <- 0
+  to <- 1
+  n <- 100
+  grid_df <- expand.grid(
+    x = seq(from, to, length.out = n),
+    y = seq(from, to, length.out = n)
+  )
+  
+  grid_df$prob = model %>% predict(grid_df %>% select(x,y), type = 'prob') %>% select(prob = class_1)
+  
+  ## Prepare plot dataset
+  
+  data_df <- lapply(
+    data_name,
+    function(data_name) {
+      df <- df[[data_name]] 
+      rbind(
+        df$full_train %>% mutate(partition = "train"),
+        df$full_val %>% mutate(partition = "val")
+      )
+    }
+  ) %>% bind_rows
+  
+  ## plot data
+  ggplot() + 
+    geom_raster(data = grid_df, aes(x = x, y = y, fill = prob), interpolate = T, alpha = 0.7) +
+    scale_fill_gradient2(low = "blue", mid = "white",
+                         high = "red", midpoint = 0.5, space = "rgb",
+                         na.value = "grey50", guide = "colourbar") +
+    geom_point(data = data_df, aes(x = x, y = y, fill = 1- (as.numeric(factor(class)) - 1), alpha = partition), shape = 21) +
+    scale_alpha_manual(values = c("train" = 0.6, "test" = 1)) +
+    theme_bw() + ggtitle(model$method %>% toupper) +
+    theme(legend.position = "none")
+
+```
+
+Now change kernel type:
+
+$$K(x_i, x_{i'}) = \exp\big(-\gamma \sum_{j=1}^{p}(x_{ij}-x_{i'j})^2\big)$$
+
+where:
+
+$\gamma$ is the scale parameter, which set the speed of the exponential decay
+
+```{r}
+
+algorithm = 'svmRadial'
+
+info[[algorithm]]$parameters
+
+```
+
+Cost has the same interpretation as of above.
+
+```{r}
+model = train(y = df[[data_name]]$y_train$class,
+           x = df[[data_name]]$x_train,
+           method = algorithm,
+           trControl = trainControl(method = 'boot',
+                                    classProbs =  TRUE)
+           )
+```
+
+
+```{r, echo=FALSE}
+  ### prepare prediction
+
+  from <- 0
+  to <- 1
+  n <- 100
+  grid_df <- expand.grid(
+    x = seq(from, to, length.out = n),
+    y = seq(from, to, length.out = n)
+  )
+  
+  grid_df$prob = model %>% predict(grid_df %>% select(x,y), type = 'prob') %>% select(prob = class_1)
+  
+  ## Prepare plot dataset
+  
+  data_df <- lapply(
+    data_name,
+    function(data_name) {
+      df <- df[[data_name]] 
+      rbind(
+        df$full_train %>% mutate(partition = "train"),
+        df$full_val %>% mutate(partition = "val")
+      )
+    }
+  ) %>% bind_rows
+  
+  ## plot data
+  ggplot() + 
+    geom_raster(data = grid_df, aes(x = x, y = y, fill = prob), interpolate = T, alpha = 0.7) +
+    scale_fill_gradient2(low = "blue", mid = "white",
+                         high = "red", midpoint = 0.5, space = "rgb",
+                         na.value = "grey50", guide = "colourbar") +
+    geom_point(data = data_df, aes(x = x, y = y, fill = 1- (as.numeric(factor(class)) - 1), alpha = partition), shape = 21) +
+    scale_alpha_manual(values = c("train" = 0.6, "test" = 1)) +
+    theme_bw() + ggtitle(model$method %>% toupper) +
+    theme(legend.position = "none")
+
+```
