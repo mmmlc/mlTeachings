@@ -1,6 +1,6 @@
 # mlTeachings
 
-Jupyter+R: http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=index.ipynb
+Jupyter+R: [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/gbonomib/mlTeachings/master)
 
 RStudio: http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=rstudio
 
