@@ -1,8 +1,8 @@
 # mlTeachings
 
-Jupyter+R: [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/gbonomib/mlTeachings/master)
+Jupyter+R: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/binder-examples/r/master?filepath=index.ipynb)
 
-RStudio: http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=rstudio
+RStudio: [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/binder-examples/r/master?urlpath=rstudio)
 
 ## ML
 * ### In R
