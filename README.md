@@ -27,16 +27,14 @@ RStudio -> [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v
 ## Random
 
 ```r
-install.packages('cowsay)
+install.packages('cowsay')
 
-cowsay::say(fortune = 10)
-
-someone_say_hello <- function() {
+someone_diss_sas <- function() {
     animal <- sample(names(cowsay::animals), 1) 
-    cowsay::say(paste("Hello, I'm a ", animal, ".", collapse = ""), by = animal)  
+    cowsay::say(fortune = "SAS", by = animal)  
 }
 
-someone_say_hello()
+someone_diss_sas()
 
 ```
 
