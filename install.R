@@ -8,4 +8,4 @@ install.packages("ggthemes")
 install.packages("assertthat")
 install.packages("kernlab")
 install.packages("rattle")
-
+install.packages("kknn")
