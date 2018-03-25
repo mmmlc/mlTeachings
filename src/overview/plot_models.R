@@ -48,7 +48,7 @@ plot_models <- function(data, model){
       print(predict_type)
       prob <- predict(model[[model_name]][[data_name]]$model$finalModel, newdata = new_data_df, type = predict_type)
       if(is.numeric(prob)){
-        prob
+        if(model[[model_name]][[data_name]]$model$method %in% c('glm')){prob = 1 - prob}else{prob}
       } else if(is.matrix(prob)) {
         prob <- prob[,1]
       } else {
