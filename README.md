@@ -1,5 +1,11 @@
 # mlTeachings
 
+Jupyter Lab -> [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab)
+
+Jupyter Notebook -> [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=tree)
+
+RStudio -> [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=rstudio)
+
 ## ML
 * ### In R
     * #### Caret Cheatsheet
@@ -21,16 +27,14 @@
 ## Random
 
 ```r
-install.packages('cowsay)
+install.packages('cowsay')
 
-cowsay::say(fortune = 10)
-
-someone_say_hello <- function() {
+someone_diss_sas <- function() {
     animal <- sample(names(cowsay::animals), 1) 
-    cowsay::say(paste("Hello, I'm a ", animal, ".", collapse = ""), by = animal)  
+    cowsay::say(fortune = "SAS", by = animal)  
 }
 
-someone_say_hello()
+someone_diss_sas()
 
 ```
 

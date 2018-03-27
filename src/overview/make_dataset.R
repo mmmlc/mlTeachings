@@ -65,7 +65,7 @@ get_full_dataset <- function() {
   datasets <- list(
     "normal" = mlbench.2dnormals(n, sd = 0.3),
     "circles" = make_circles(n, 0.3, 0.1),
-    "spirals" = mlbench.spirals(n, 0.9, 0.07),
+    "spirals" = mlbench.spirals(n, 0.9, 0.1),
     "linear"  = make_linear_separable(n)
   )
   
