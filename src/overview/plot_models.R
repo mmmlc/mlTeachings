@@ -80,3 +80,43 @@ plot_models <- function(data, model){
           axis.ticks=element_blank()) + 
     labs(x = "", y = "")
 }
+
+
+plot_model = function(df, data_name, model){
+## prepare prediction
+
+from <- 0
+to <- 1
+n <- 100
+grid_df <- expand.grid(
+  x = seq(from, to, length.out = n),
+  y = seq(from, to, length.out = n)
+)
+
+grid_df$prob = model %>% predict(grid_df %>% select(x,y), type = 'prob') %>% select(prob = class_1)
+
+## Prepare plot dataset
+
+data_df <- lapply(
+  data_name,
+  function(data_name) {
+    df <- df[[data_name]] 
+    rbind(
+      df$full_train %>% mutate(partition = "train"),
+      df$full_val %>% mutate(partition = "val")
+    )
+  }
+) %>% bind_rows
+
+## plot data
+ggplot() + 
+  geom_raster(data = grid_df, aes(x = x, y = y, fill = prob), interpolate = T, alpha = 0.7) +
+  scale_fill_gradient2(low = "blue", mid = "white",
+                       high = "red", midpoint = 0.5, space = "rgb",
+                       na.value = "grey50", guide = "colourbar") +
+  geom_point(data = data_df, aes(x = x, y = y, fill = 1- (as.numeric(factor(class)) - 1), alpha = partition), shape = 21) +
+  scale_alpha_manual(values = c("train" = 0.6, "test" = 1)) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+}
