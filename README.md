@@ -1,11 +1,17 @@
 # mlTeachings
 
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/0_intro_tidiverse.ipynb)
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/1_datasets.ipynb)
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/2_knn.ipynb)
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/3_svm.ipynb)
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/4_dt.ipynb)
+Lesson 0 - Intro Tidyverse [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/0_intro_tidiverse.ipynb)
+
+Lesson 1 - Datasets [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/1_datasets.ipynb)
+
+Lesson 2 - KNN [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/2_knn.ipynb)
+
+Lesson 3 - SVM [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/3_svm.ipynb)
+
+Lesson 4 - DT & RF [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/4_dt.ipynb)
+
+Others
 
 Jupyter Notebook -> [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=tree)
 
