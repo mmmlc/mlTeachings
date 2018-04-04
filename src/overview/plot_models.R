@@ -1,5 +1,6 @@
 plot_models <- function(data, model){
   
+  # browser()
   
   ## Prepare plot dataset
   data_df <- lapply(
@@ -45,10 +46,13 @@ plot_models <- function(data, model){
       if(model[[model_name]][[data_name]]$model$method %in% c('glm')) {
         predict_type <- "response"
       }
+      if(model[[model_name]][[data_name]]$model$method %in% c('nnet')) {
+        predict_type <- "raw"
+      }
       print(predict_type)
       prob <- predict(model[[model_name]][[data_name]]$model$finalModel, newdata = new_data_df, type = predict_type)
       if(is.numeric(prob)){
-        if(model[[model_name]][[data_name]]$model$method %in% c('glm')){prob = 1 - prob}else{prob}
+        if(model[[model_name]][[data_name]]$model$method %in% c('glm', 'nnet')){prob = 1 - prob}else{prob}
       } else if(is.matrix(prob)) {
         prob <- prob[,1]
       } else {

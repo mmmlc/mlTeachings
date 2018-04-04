@@ -4,6 +4,8 @@ train_models = function(methods,
   model = list()
   # df_types = data$full %>% dplyr::select(type) %>% unique %>% unlist %>% drop
   
+  # browser()
+  
   if(names(data)[1] == 'full'){df_types = names(data)[-1]} else {df_types = names(data)}
   
   
@@ -13,9 +15,9 @@ train_models = function(methods,
     for(method in names(methods)){
       
       model[[method]][[type]] = methods[[method]](data[[type]]$x_train,
-                                                  data[[type]]$y_train$class,
+                                                  data[[type]]$y_train$class %>% factor,
                                                   data[[type]]$x_val,
-                                                  data[[type]]$y_val$class)
+                                                  data[[type]]$y_val$class %>% factor)
       
     }
   }

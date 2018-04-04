@@ -10,7 +10,8 @@ methods = list('logReg' = get_logisticRegression_model,
                'gaussProcess' = get_gaussianProcess_model,
                'knn' = get_knn_model,
                'dt' = get_decision_tree_model,
-               'rf' = get_rf_model
+               'rf' = get_rf_model,
+               'nnet' = get_nnet_model
 )
 
 # train selected models ####
@@ -20,5 +21,4 @@ model = train_models(methods = methods)
 
 data = get_partitioned_df(include_full = F)
 plot_models(data, model)
-
 
