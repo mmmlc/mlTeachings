@@ -7,7 +7,7 @@ require(assertthat)
 require(kernlab)
 require(rattle)
 
-install_keras()
+# install_keras()
 
 source('src/overview/make_dataset.R')
 
