@@ -13,5 +13,7 @@ install.packages("kknn")
 install.packages("randomForest")
 install.packages('nnet')
 install.packages('RSNNS')
-keras::install_keras()
+
 tensorflow::install_tensorflow()
+keras::install_keras()
+mnist <- dataset_mnist()
