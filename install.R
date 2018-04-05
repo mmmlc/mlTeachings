@@ -16,4 +16,3 @@ install.packages('RSNNS')
 
 tensorflow::install_tensorflow()
 keras::install_keras()
-mnist = keras::dataset_mnist()
