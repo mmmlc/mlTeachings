@@ -1,16 +1,16 @@
 # mlTeachings
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/0_teaser.ipynb) Teaser
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=lessons/one/0_teaser.ipynb?urlpath=tree) Teaser
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/1_intro_tidiverse.ipynb) Lesson 1 - Intro Tidyverse
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=lessons/one/1_intro_tidiverse.ipynb?urlpath=tree) Lesson 1 - Intro Tidyverse
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/2_datasets.ipynb) Lesson 2 - Datasets
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=lessons/one/2_datasets.ipynb?urlpath=tree) Lesson 2 - Datasets
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/3_knn.ipynb) Lesson 3 - KNN
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=lessons/one/3_knn.ipynb?urlpath=tree) Lesson 3 - KNN
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/4_svm.ipynb) Lesson 4 - SVM
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=lessons/one/4_svm.ipynb?urlpath=tree) Lesson 4 - SVM
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?urlpath=lab?filepath=lessons/one/5_dt.ipynb) Lesson 5 - DT & RF
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=lessons/one/5_dt.ipynb?urlpath=tree) Lesson 5 - DT & RF
 
 Others
 
