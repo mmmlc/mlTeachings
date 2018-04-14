@@ -22,3 +22,5 @@ model = train_models(methods = methods)
 data = get_partitioned_df(include_full = F)
 plot_models(data, model)
 
+model$polynomialSvm$spirals$model$bestTune
+

@@ -8,7 +8,7 @@ get_qda_model <- function(x_train,
   
   model$model = train(x = x_train,
                       y = y_train,
-                      method = 'svmRadial',
+                      method = 'qda',
                       trControl = trainControl(classProbs =  TRUE))
   
   if(!is.null(x_val) & !is.null(y_val)){
@@ -33,3 +33,6 @@ get_qda_model <- function(x_train,
 #                       data$normal$x_val,
 #                       data$normal$y_val$class)
 # 
+
+
+getModelInfo(model = "qda")

@@ -5,10 +5,19 @@ get_polySvm_model <- function(x_train,
   
   
   model = list()
+
+  degree = 3
+  scale = 0.33
+  cost = 3
+  
+  hyperparameters = data.frame('degree' = degree,
+                               'scale' = scale,
+                               'C' = cost)
   
   model$model = train(x = x_train,
                       y = y_train,
                       method = 'svmPoly',
+                      tuneGrid = hyperparameters,
                       trControl = trainControl(classProbs =  TRUE))
   
   if(!is.null(x_val) & !is.null(y_val)){
