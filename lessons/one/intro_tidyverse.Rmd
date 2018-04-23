@@ -1,0 +1,15 @@
+---
+title: "A fast introduction to tidyverse"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+mtcars
+```
+
+```{r}
+mtcars %>% group_by(cyl) %>% summarise(hp  = mean(hp)) %>% ggplot(aes(x = cyl, y = hp)) + 
+  geom_bar(stat = "identity") 
+```
+
