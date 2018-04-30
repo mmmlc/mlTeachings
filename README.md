@@ -11,3 +11,5 @@
 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=lessons/one/4_svm.ipynb?urlpath=tree) SVM
 
 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=lessons/one/5_dt.ipynb?urlpath=tree) DT
+
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=lessons/one/6_titanic.ipynb?urlpath=tree) Titanic Example
