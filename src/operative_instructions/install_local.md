@@ -2,7 +2,7 @@
 
 ___
 
-Prior starting, make sure to have Administrative rights on your device. While this is not a must-have it will make your life way easier.
+Prior starting, make sure to have *admin rights* on your device. While this is not a must-have it will make your life way easier.
 
 ## A. Basics
 
