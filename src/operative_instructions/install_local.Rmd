@@ -63,13 +63,14 @@ Sorry, this is a must have.
 
 Do not forget to set the following **environment variables** on your device
 
-- *PATH* must point to the directory of python.exe (e.g. C:\\User\\ FolderWhereYouInstalledPython)
+1. *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython)
+2. *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython\\**scripts**)
 
 
 And, in case you are working on a corporate device:
 
-- set *HTTP_PROXY* to http://YOUR_ID:YOUR_PWD@proxymil.internal.unicredit.eu:3128/
-- and *HTTPS_PROXY* to https://YOUR_ID:YOUR_PWD@proxymil.internal.unicredit.eu:3128/ 
+- set *HTTP_PROXY* to http://YOUR_ID:YOUR_UNIDIR_PWD@proxymil.internal.unicredit.eu:3128/
+- and *HTTPS_PROXY* to https://YOUR_ID:YOUR_UNIDIR_PWD@proxymil.internal.unicredit.eu:3128/ 
 
 ### 3. Interface R - Python
 ```{r, eval=FALSE}
