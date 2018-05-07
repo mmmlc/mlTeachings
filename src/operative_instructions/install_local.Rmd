@@ -56,9 +56,10 @@ ___
 ### 1. 64-bit OS
 Sorry, this is a must have.
 
-### 2. Install the latest release of Python
+### 2. Install the latest release of [Python](https://www.python.org/downloads/release/python-365/)
 
-https://www.howtogeek.com/197947/how-to-install-python-on-windows/
+- https://www.python.org/ftp/python/3.6.5/python-3.6.5-amd64.exe (Windows)
+- https://www.python.org/ftp/python/3.6.5/python-3.6.5-macosx10.9.pkg (Mac OS X 10.9 and later)
 
 Do not forget to set the following **environment variables** on your device
 
