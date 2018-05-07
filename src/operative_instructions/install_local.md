@@ -85,6 +85,7 @@ ___
 In case you want to run our amazing notebooks offline. (Requires Python installation)
 
 ### 1. Configure stuffs
+
 ```{r, eval=FALSE}
 install.packages(c('repr',
                    'IRdisplay',
@@ -98,6 +99,11 @@ install.packages(c('repr',
 devtools::install_github('IRkernel/IRkernel')
 IRkernel::installspec(user = FALSE)
 ```
+
+Do not forget to set the following **environment variables** on your device
+
+- *PATH* must point to the directory of R.exe (e.g. C:\\Program Files\\R\\R-3.5.0\\bin)
+
 
 ### 2. Install visual Studio Build Tools
 
@@ -132,5 +138,4 @@ ___
 ## D. Cloud
 
 In case you do not manage to execute **A.** and **B.** you can run everything from https://rstudio.cloud
-
 
