@@ -2,7 +2,7 @@
 
 ___
 
-Prior starting, make sure to have *admin rights* on your device. While this is not a must-have it will make your life way easier.
+Prior starting, make sure to have admin rights on your device. While this is not a must-have it will make your life way easier.
 
 ## A. Basics
 
@@ -56,7 +56,12 @@ https://www.howtogeek.com/197947/how-to-install-python-on-windows/
 Do not forget to set the following **environment variables** on your device
 
 - *PATH* must point to the directory of python.exe (e.g. C:\\User\\ FolderWhereYouInstalledPython)
-- *HTTP_PROXY* and *HTTPS_PROXY* must be set to ADD HERE THE CORRECT PATH (only in case you are working on a corporate device)
+
+
+And, in case you are working on a corporate device:
+
+- set *HTTP_PROXY* to http://YOUR_ID:YOUR_PWD@proxymil.internal.unicredit.eu:3128/
+- and *HTTPS_PROXY* to https://YOUR_ID:YOUR_PWD@proxymil.internal.unicredit.eu:3128/ 
 
 ### 3. Interface R - Python
 ```{r, eval=FALSE}
@@ -94,7 +99,11 @@ devtools::install_github('IRkernel/IRkernel')
 IRkernel::installspec(user = FALSE)
 ```
 
-### 2. From the CMD line (opened as administrator)
+### 2. Install visual Studio Build Tools
+
+http://landinghub.visualstudio.com/visual-cpp-build-tools
+
+### 3. From the CMD line (opened as administrator)
 If you wish to use jupyter notebooks
 ```{r, engine='sh', eval=FALSE}
 pip install jupyter
@@ -123,4 +132,5 @@ ___
 ## D. Cloud
 
 In case you do not manage to execute **A.** and **B.** you can run everything from https://rstudio.cloud
+
 
