@@ -59,7 +59,6 @@ Do not forget to set the following **environment variables** on your device
 - *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython)
 - *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython\\**scripts**)
 
-
 And, in case you are working on a corporate device:
 
 - set *HTTP_PROXY* to http://YOUR_ID:YOUR_UNIDIR_PWD@proxymil.internal.unicredit.eu:3128/
@@ -109,7 +108,9 @@ Do not forget to set the following **environment variables** on your device
 
 ### 2. Install visual Studio Build Tools
 
-http://landinghub.visualstudio.com/visual-cpp-build-tools
+- https://www.visualstudio.com/it/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15
+
+![](fig/build_tools.PNG)
 
 ### 3. From the CMD line (opened as administrator)
 If you wish to use jupyter notebooks
