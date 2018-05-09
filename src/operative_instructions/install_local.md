@@ -1,5 +1,4 @@
 # On your device
-
 ___
 
 Prior starting, make sure to have admin rights on your device. While this is not a must-have it will make your life way easier.
@@ -56,8 +55,9 @@ Sorry, this is a must have.
 
 Do not forget to set the following **environment variables** on your device
 
-- *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython)
-- *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython\\**scripts**)
+1. *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython)
+2. *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython\\**scripts**)
+
 
 And, in case you are working on a corporate device:
 
@@ -87,6 +87,10 @@ In case you want to run our amazing notebooks offline. (Requires Python installa
 
 ### 1. Configure stuffs
 
+Do not forget to set the following **environment variables** on your device
+
+- *PATH* must point to the directory of R.exe (e.g. C:\\Program Files\\R\\R-3.5.0\\bin)
+
 ```{r, eval=FALSE}
 install.packages(c('repr',
                    'IRdisplay',
@@ -97,14 +101,21 @@ install.packages(c('repr',
                    'uuid',
                    'digest'))
 
+```
+
+Once you have installed the required packages, run this:
+
+```{r, eval=FALSE}
 devtools::install_github('IRkernel/IRkernel')
 IRkernel::installspec(user = FALSE)
 ```
 
-Do not forget to set the following **environment variables** on your device
+**Only if** the command above did not work, please download and unzip [this](https://github.com/IRkernel/IRkernel/archive/master.zip) and run the following:
 
-- *PATH* must point to the directory of R.exe (e.g. C:\\Program Files\\R\\R-3.5.0\\bin)
-
+```{r, eval=FALSE}
+devtools::install('whatheverFolderYouHaveUnzippedTheFile\IRKernel')
+IRkernel::installspec(user = FALSE)
+```
 
 ### 2. Install visual Studio Build Tools
 
@@ -141,4 +152,3 @@ ___
 ## D. Cloud
 
 In case you do not manage to execute **A.** and **B.** you can run everything from https://rstudio.cloud
-
