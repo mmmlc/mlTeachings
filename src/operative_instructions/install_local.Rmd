@@ -160,4 +160,3 @@ ___
 ## D. Cloud
 
 In case you do not manage to execute **A.** and **B.** you can run everything from https://rstudio.cloud
-
