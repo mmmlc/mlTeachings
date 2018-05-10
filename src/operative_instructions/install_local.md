@@ -34,7 +34,7 @@ install.packages(c('rmarkdown',
                    'rattle',
                    'kknn',
                    'randomForest',
-                   'nnet'
+                   'nnet',
                    'RSNNS',
                    'metrics')
 )
