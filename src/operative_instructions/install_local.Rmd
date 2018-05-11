@@ -17,10 +17,11 @@ Prior starting, make sure to have admin rights on your device. While this is not
 
 ### 1. Install R
 
-https://cran.r-project.org/bin/windows/base/
+* https://cran.r-project.org/bin/windows/base/
+    * We developed the code in $\texttt{R}$ 3.4.1. While backward compatibility is not guaranteed, newer $\texttt{R}$ releases should properly work.
 
 ### 2. Install R Studio (R IDE)
-https://www.rstudio.com/products/rstudio/download/
+* https://www.rstudio.com/products/rstudio/download/
 
 ### 3. Data Manipulation
 ```{r, eval=FALSE}
@@ -65,8 +66,8 @@ Sorry, this is a must have.
 
 Do not forget to set the following **environment variables** on your device
 
-1. *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython)
-2. *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython\\**scripts**)
+* *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython)
+* *PATH* must point to the directory of python.exe (e.g. C:\\User\\FolderWhereYouInstalledPython\\**scripts**)
 
 
 And, in case you are working on a corporate device:
@@ -113,14 +114,14 @@ install.packages(c('repr',
 
 ```
 
-Once you have installed the required packages, run this:
+- Once you have installed the required packages, run this:
 
 ```{r, eval=FALSE}
 devtools::install_github('IRkernel/IRkernel')
 IRkernel::installspec(user = FALSE)
 ```
 
-**Only if** the command above did not work, please download and unzip [this](https://github.com/IRkernel/IRkernel/archive/master.zip) and run the following:
+- **Only if** the command above did not work, please download and unzip [this](https://github.com/IRkernel/IRkernel/archive/master.zip) and run the following:
 
 ```{r, eval=FALSE}
 devtools::install('whatheverFolderYouHaveUnzippedTheFile\IRKernel')
@@ -134,20 +135,22 @@ IRkernel::installspec(user = FALSE)
 ![](fig/build_tools.PNG)
 
 ### 3. From the CMD line (opened as administrator)
-If you wish to use jupyter notebooks
+* If you wish to use jupyter notebooks
 ```{r, engine='sh', eval=FALSE}
 pip install jupyter
 ```
-If you prefer jupyterlab instead
+* If you prefer jupyterlab instead
 ```{r, engine='sh', eval=FALSE}
 pip install jupyterlab
 ```
-Be sure to be in the right hard drive
+* Be sure to be in the right hard drive
 ```{r, engine='sh', eval=FALSE}
 C:
 ```
 
-Start jupyter/jupyterlab (a browser window should magically pop up).
+* Download the [source files](https://github.com/fabiocolombo/mlTeachings/archive/master.zip) and unzip.
+
+* Start jupyter/jupyterlab (a browser window should magically pop up).
 From there, you can source the .ipynb in the folder where you have downloaded it
 
 ```{r, engine='sh', eval=FALSE}
@@ -155,7 +158,7 @@ jupyter-notebook
 jupyter-lab
 ```
 
-To connection (once you are done), hit CTRL+C twice in the CMD line
+* To end the jupyter session (once you are done), hit CTRL+C twice in the CMD line
 
 ___
 
