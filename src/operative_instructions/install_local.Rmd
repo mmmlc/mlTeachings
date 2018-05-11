@@ -1,6 +1,7 @@
 ---
 title: "On your device"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
 ---
@@ -100,7 +101,7 @@ In case you want to run our amazing notebooks offline. (Requires Python installa
 
 Do not forget to set the following **environment variables** on your device
 
-- *PATH* must point to the directory of R.exe (e.g. C:\\Program Files\\R\\R-3.5.0\\bin)
+- *PATH* must point to the directory of R.exe (e.g. C:\\Program Files\\R\\R-3.4.1\\bin)
 
 ```{r, eval=FALSE}
 install.packages(c('repr',
