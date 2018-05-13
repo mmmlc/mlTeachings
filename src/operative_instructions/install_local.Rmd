@@ -48,7 +48,8 @@ install.packages(c('rmarkdown',
                    'randomForest',
                    'nnet',
                    'RSNNS',
-                   'metrics')
+                   'Metrics',
+                   'AUC')
 )
 ```
 

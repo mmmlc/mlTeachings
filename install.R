@@ -13,6 +13,8 @@ install.packages("kknn")
 install.packages("randomForest")
 install.packages('nnet')
 install.packages('RSNNS')
+install.packages('Metrics')
+install.packages('AUC')
 
 tensorflow::install_tensorflow()
 keras::install_keras()

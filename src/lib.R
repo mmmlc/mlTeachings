@@ -6,6 +6,8 @@ require(ggthemes)
 require(assertthat)
 require(kernlab)
 require(rattle)
+require(Metrics)
+require(AUC)
 
 # install_keras()
 
