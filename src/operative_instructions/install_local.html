@@ -171,14 +171,11 @@ $(document).ready(function () {
 <hr />
 </div>
 </div>
-<div id="b.-neural-networks" class="section level2">
-<h2>B. Neural Networks</h2>
-<div id="bit-os" class="section level3">
-<h3>1. 64-bit OS</h3>
-<p>Sorry, this is a must have.</p>
-</div>
+<div id="b.-jupyter-notebooks" class="section level2">
+<h2>B. Jupyter Notebooks</h2>
+<p>In case you want to run our amazing notebooks offline.</p>
 <div id="install-the-latest-release-of-python" class="section level3">
-<h3>2. Install the latest release of <a href="https://www.python.org/downloads/release/python-365/">Python</a></h3>
+<h3>1. Install the latest release of <a href="https://www.python.org/downloads/release/python-365/">Python</a></h3>
 <ul>
 <li><a href="https://www.python.org/ftp/python/3.6.5/python-3.6.5-amd64.exe" class="uri">https://www.python.org/ftp/python/3.6.5/python-3.6.5-amd64.exe</a> (Windows)</li>
 <li><a href="https://www.python.org/ftp/python/3.6.5/python-3.6.5-macosx10.9.pkg" class="uri">https://www.python.org/ftp/python/3.6.5/python-3.6.5-macosx10.9.pkg</a> (Mac OS X 10.9 and later)</li>
@@ -194,26 +191,8 @@ $(document).ready(function () {
 <li>and <em>HTTPS_PROXY</em> to <a href="https://YOUR_ID:YOUR_UNIDIR_PWD@proxymil.internal.unicredit.eu:3128/" class="uri">https://YOUR_ID:YOUR_UNIDIR_PWD@proxymil.internal.unicredit.eu:3128/</a></li>
 </ul>
 </div>
-<div id="interface-r---python" class="section level3">
-<h3>3. Interface R - Python</h3>
-<pre class="r"><code>install.packages('reticulate')</code></pre>
-</div>
-<div id="neural-nets" class="section level3">
-<h3>4. Neural Nets</h3>
-<pre class="r"><code>install.packages(c('tensorflow',
-                   'keras')
-)
-
-tensorflow::install_tensorflow()
-keras::install_keras() # this may throw an error but work anyway</code></pre>
-<hr />
-</div>
-</div>
-<div id="c.-jupyter-notebooks" class="section level2">
-<h2>C. Jupyter Notebooks</h2>
-<p>In case you want to run our amazing notebooks offline. (Requires Python installation)</p>
-<div id="configure-stuffs" class="section level3">
-<h3>1. Configure stuffs</h3>
+<div id="configure-stuff" class="section level3">
+<h3>2. Configure stuff</h3>
 <p>Do not forget to set the following <strong>environment variables</strong> on your device</p>
 <ul>
 <li><em>PATH</em> must point to the directory of R.exe (e.g. C:\Program Files\R\R-3.4.1\bin)</li>
@@ -238,7 +217,7 @@ IRkernel::installspec(user = FALSE)</code></pre>
 IRkernel::installspec(user = FALSE)</code></pre>
 </div>
 <div id="install-visual-studio-build-tools" class="section level3">
-<h3>2. Install visual Studio Build Tools</h3>
+<h3>3. Install visual Studio Build Tools</h3>
 <ul>
 <li><a href="https://www.visualstudio.com/it/thank-you-downloading-visual-studio/?sku=BuildTools&amp;rel=15" class="uri">https://www.visualstudio.com/it/thank-you-downloading-visual-studio/?sku=BuildTools&amp;rel=15</a></li>
 </ul>
@@ -248,7 +227,7 @@ IRkernel::installspec(user = FALSE)</code></pre>
 </div>
 </div>
 <div id="from-the-cmd-line-opened-as-administrator" class="section level3">
-<h3>3. From the CMD line (opened as administrator)</h3>
+<h3>4. From the CMD line (opened as administrator)</h3>
 <ul>
 <li>If you wish to use jupyter notebooks</li>
 </ul>
@@ -270,6 +249,28 @@ jupyter-lab</code></pre>
 <ul>
 <li>To end the jupyter session (once you are done), hit CTRL+C twice in the CMD line</li>
 </ul>
+<hr />
+</div>
+</div>
+<div id="c.-neural-networks" class="section level2">
+<h2>C. Neural Networks</h2>
+<p>Requires Python installation (see B.)</p>
+<div id="bit-os" class="section level3">
+<h3>1. 64-bit OS</h3>
+<p>Sorry, this is a must have.</p>
+</div>
+<div id="interface-r---python" class="section level3">
+<h3>2. Interface R - Python</h3>
+<pre class="r"><code>install.packages('reticulate')</code></pre>
+</div>
+<div id="neural-nets" class="section level3">
+<h3>3. Neural Nets</h3>
+<pre class="r"><code>install.packages(c('tensorflow',
+                   'keras')
+)
+
+tensorflow::install_tensorflow()
+keras::install_keras() # this may throw an error but work anyway</code></pre>
 <hr />
 </div>
 </div>

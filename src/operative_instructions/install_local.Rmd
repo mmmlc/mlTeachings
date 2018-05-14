@@ -1,9 +1,9 @@
 ---
 title: "On your device"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -53,15 +53,13 @@ install.packages(c('rmarkdown',
 )
 ```
 
-
 ___
 
-## B. Neural Networks
+## B. Jupyter Notebooks
 
-### 1. 64-bit OS
-Sorry, this is a must have.
+In case you want to run our amazing notebooks offline.
 
-### 2. Install the latest release of [Python](https://www.python.org/downloads/release/python-365/)
+### 1. Install the latest release of [Python](https://www.python.org/downloads/release/python-365/)
 
 - https://www.python.org/ftp/python/3.6.5/python-3.6.5-amd64.exe (Windows)
 - https://www.python.org/ftp/python/3.6.5/python-3.6.5-macosx10.9.pkg (Mac OS X 10.9 and later)
@@ -77,28 +75,7 @@ And, in case you are working on a corporate device:
 - set *HTTP_PROXY* to http://YOUR_ID:YOUR_UNIDIR_PWD@proxymil.internal.unicredit.eu:3128/
 - and *HTTPS_PROXY* to https://YOUR_ID:YOUR_UNIDIR_PWD@proxymil.internal.unicredit.eu:3128/ 
 
-### 3. Interface R - Python
-```{r, eval=FALSE}
-install.packages('reticulate')
-```
-
-### 4. Neural Nets
-```{r, eval=FALSE}
-install.packages(c('tensorflow',
-                   'keras')
-)
-
-tensorflow::install_tensorflow()
-keras::install_keras() # this may throw an error but work anyway
-```
-
-___
-
-## C. Jupyter Notebooks
-
-In case you want to run our amazing notebooks offline. (Requires Python installation)
-
-### 1. Configure stuffs
+### 2. Configure stuff
 
 Do not forget to set the following **environment variables** on your device
 
@@ -130,13 +107,13 @@ devtools::install('C:\whatheverFolderYouHaveUnzippedTheFile\IRKernel')
 IRkernel::installspec(user = FALSE)
 ```
 
-### 2. Install visual Studio Build Tools
+### 3. Install visual Studio Build Tools
 
 - https://www.visualstudio.com/it/thank-you-downloading-visual-studio/?sku=BuildTools&rel=15
 
 ![](fig/build_tools.PNG)
 
-### 3. From the CMD line (opened as administrator)
+### 4. From the CMD line (opened as administrator)
 * If you wish to use jupyter notebooks
 ```{r, engine='sh', eval=FALSE}
 pip install jupyter
@@ -161,6 +138,30 @@ jupyter-lab
 ```
 
 * To end the jupyter session (once you are done), hit CTRL+C twice in the CMD line
+
+___
+
+## C. Neural Networks
+
+Requires Python installation (see B.)
+
+### 1. 64-bit OS
+Sorry, this is a must have.
+
+### 2. Interface R - Python
+```{r, eval=FALSE}
+install.packages('reticulate')
+```
+
+### 3. Neural Nets
+```{r, eval=FALSE}
+install.packages(c('tensorflow',
+                   'keras')
+)
+
+tensorflow::install_tensorflow()
+keras::install_keras() # this may throw an error but work anyway
+```
 
 ___
 
