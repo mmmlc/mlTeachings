@@ -193,8 +193,9 @@ xx = BayesianOptimization(willBeOptimized,
                           bounds = list(KMAX = c(1L, 20L),
                                         KERNEL = c(1L, 10L),
                                         DIST = c(0.1, 10)),
-                          init_points = 10,
-                          n_iter = 40)
+                          init_points = 20,
+                          n_iter = 40,
+                          acq = 'ei')
 
 xx$Best_Par
 xx$Best_Value
@@ -207,8 +208,11 @@ xx$History %>% ggplot() +
 xx$History %>% ggplot() +
   geom_line(aes(x = KMAX, y = Value), color = 'blue')
 
+xx$History %>% ggplot() +
+  geom_line(aes(x = KERNEL, y = Value), color = 'blue')
+
 xx$History %>% as_data_frame %>% ggplot(aes(x = KMAX, y = DIST)) +
-  stat_density_2d() + geom_point(aes(size = Round, colour = Value)) #+
+  stat_density_2d() + geom_point(aes(size = Round, colour = -Value)) #+
   geom_path(aes(colour = as.numeric(-Round)))
 
 xx$History %>% summary
