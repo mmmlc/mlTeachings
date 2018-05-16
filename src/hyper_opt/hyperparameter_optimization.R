@@ -90,7 +90,7 @@ kknn::kknn()
 
 
 
-(tune_grid = data.frame(kmax = seq_len(20) %>% rep(each = 50),
+(long_tune_grid = data.frame(kmax = seq_len(20) %>% rep(each = 50),
                         kernel = c('rectangular' %>% rep(5),
                                    'triangular' %>% rep(5),
                                    'epanechnikov' %>% rep(5),
@@ -110,13 +110,21 @@ kknn::kknn()
                         )
 )) %>% nrow
 
-(random_tune_grid = tune_grid %>% sample_frac(size = 0.05)) %>% nrow
+(random_tune_grid = long_tune_grid %>% sample_frac(size = 0.05)) %>% nrow
 
 model = train(x = train %>% select(-one_of('survived')),
               y = train %>% select(one_of('survived')) %>% pull %>% factor,
               method = 'kknn',
-              tuneGrid = random_tune_grid
+              tuneGrid = long_tune_grid,
+              tuneLenght = 50,
+              trControl = trainControl(search = 'random', verboseIter = T)
 )
+
+# model = train(x = train %>% select(-one_of('survived')),
+#               y = train %>% select(one_of('survived')) %>% pull %>% factor,
+#               method = 'kknn',
+#               tuneGrid = random_tune_grid
+# )
 
 # model_random_search = model
 
@@ -184,7 +192,12 @@ willBeOptimized = function(KMAX, KERNEL, DIST){
   acc = confusionMatrix(val %>% select(one_of('survived')) %>% pull %>% factor,
                         test_response)
 
-  return(list('Score' = acc$overall[1],
+  test_response_probabilities = model %>%
+    predict(newdata = val %>% select(-one_of('survived')),  type = 'prob') %>% pull('1')
+  
+  roc = roc(test_response_probabilities, val$survived %>% factor) %>% auc
+  
+  return(list('Score' = roc,#acc$overall[1],
               'Pred' = test_response))  
 }
 
