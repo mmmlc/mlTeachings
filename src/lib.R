@@ -1,13 +1,18 @@
-require(tidyverse)
-require(caret)
-require(keras)
-require(mlbench)
-require(ggthemes)
-require(assertthat)
-require(kernlab)
-require(rattle)
-require(Metrics)
-require(AUC)
+suppressMessages(
+  {
+    require(tidyverse)
+    require(caret)
+    require(keras)
+    require(mlbench)
+    require(ggthemes)
+    require(assertthat)
+    require(kernlab)
+    require(rattle)
+    require(Metrics)
+    require(AUC)
+  }
+)
+
 
 # install_keras()
 
