@@ -79,7 +79,7 @@ get_full_dataset <- function() {
 
 get_partitioned_df = function(get_dataset = get_full_dataset(),
                               validationSplit = 0.8,
-                              include_full = T,
+                              include_full = F,
                               seed = 1,
                               types = NULL
                               ){
