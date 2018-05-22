@@ -1,9 +1,9 @@
 ---
 title: "On your device"
 output:
-  pdf_document: default
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -125,14 +125,7 @@ IRkernel::installspec(user = FALSE)
 
 
 ### 5. From the CMD line (again, opened as administrator)
-* If you wish to use jupyter notebooks
-```{r, engine='sh', eval=FALSE}
-pip install jupyter
-```
-* If you prefer jupyterlab instead
-```{r, engine='sh', eval=FALSE}
-pip install jupyterlab
-```
+
 * Be sure to be in the right hard drive
 ```{r, engine='sh', eval=FALSE}
 C:
