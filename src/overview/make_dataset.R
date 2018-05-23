@@ -79,7 +79,7 @@ get_full_dataset <- function() {
 
 get_partitioned_df = function(get_dataset = get_full_dataset(),
                               validationSplit = 0.8,
-                              include_full = T,
+                              include_full = F,
                               seed = 1,
                               types = NULL
                               ){
@@ -101,7 +101,7 @@ get_partitioned_df = function(get_dataset = get_full_dataset(),
     
     partitioned_df[[tp]]$full_train =  partitioned_df[[tp]]$full %>% slice(partition)
     
-    partitioned_df[[tp]]$x_train =  partitioned_df[[tp]]$full %>% dplyr::select(x,y) %>% slice(partition)
+    partitioned_df[[tp]]$x_train =  partitioned_df[[tp]]$full %>% dplyr::select(x,y) %>% slice(partition) %>% data.frame
     partitioned_df[[tp]]$y_train =  partitioned_df[[tp]]$full %>% dplyr::select(class) %>% slice(partition)
     
     partitioned_df[[tp]]$full_val =  partitioned_df[[tp]]$full %>% slice(-partition)

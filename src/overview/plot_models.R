@@ -117,7 +117,7 @@ ggplot() +
                        na.value = "grey50", guide = "colourbar") +
   geom_point(data = data_df, aes(x = x, y = y, fill = 1- (as.numeric(factor(class)) - 1), alpha = partition), shape = 21) +
   scale_alpha_manual(values = c("train" = 0.6, "test" = 1)) +
-  theme_minimal() + ggtitle(model$method %>% toupper) +
+  theme_void() + ggtitle(model$method %>% toupper) +
   theme(legend.position = "none")
 
 }
