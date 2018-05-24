@@ -83,7 +83,7 @@ plot_models <- function(data, model){
 }
 
 
-plot_model = function(df, data_name, model){
+plot_model = function(df, data_name, model, only_train = T){
 ## prepare prediction
 
 from <- 0
@@ -108,6 +108,10 @@ data_df <- lapply(
     )
   }
 ) %>% bind_rows
+
+if(only_train) {
+  data_df <- data_df %>% filter(partition != "val")
+}
 
 ## plot data
 ggplot() + 
