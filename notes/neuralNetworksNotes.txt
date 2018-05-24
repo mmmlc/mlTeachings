@@ -1,0 +1,78 @@
+1. Demistification of the definition of neural network.
+	They are not trying to mimic how the brain works. It's just a series of tensor multiplication
+	
+2. Tensor multiplication can be quite expensive in terms of computing power, especially when you have a lot of them chained together
+	This is why we need an efficient framework to rely on.
+	a. Introduce various framework (graoth of evolution of usage preferences)
+	b. introduce tensorflow (why this name tensor, quite trivial, flow less immediate, but refers to the fact that operation are "chained", will be more evident later on)
+	c. introduce keras
+	d. explain why we use them
+		a. kindly translated by rstudio
+	e. explain why we need python
+		a. they are python based (and, in turn, rely on a C++ infrastructure)
+		
+3. NN basics
+	a. explain the perceptron
+	b. build a trivial (overkilling) example in tensorflow, then in keras
+	c. mention the theorem of general approximation
+	
+4. Once the TH of gen approx has been introduced, try to build a simple multilayer perceptron
+	a. not a coincidence it is called like this
+	b. show the tensorflow formulation
+	c. show the keras formulation. is't way simpler don't ya? From now on use only keras
+	d. specify that this is an example of fully connected model, other models are not fully connected, CNN, RNN
+	
+5. introduce concept of weights, bias, activation function, and dropout function, based on the example of which at 4.c
+	a. weight, they are like the beta coeff in a canonical regression
+	b. bias, it is like the intercept in a canonical regression
+	c. activation function, act as a regularizer for the optimization process (we'll talk about it later on), but it is conceptually like the link function in a glm (e.g. the logit function in logistic regression)
+	d. dropout. a nice way to avoid overfitting
+	
+6. present g_2(g_1(x*w_1 + b_1)*w_2 + b_2) etc... this is a nice use case for piping operation!!!
+	a. it is not a coincidence that keras has a construct called "sequential_model"
+	b. more complex model are not sequential btw
+	
+7. introduce the concept of loss function and optimization function
+	a. we try to approximate a target, by reducing the difference (called loss because its piu fico)
+	b. gradient descent and other types of first and second order optimizers (from gradient descent to relu)
+	c. introduce the most common activation function (sigmoid tanh relu)
+		
+8. revise the mnist example with a mlp
+
+9. introduce other types of nnets
+	CNN. Basically a NOT-FULLY CONNECTED nnet
+	a. what is a kernel?
+	b. what is a pooling layer?
+	c. what is a regularization layer
+	d. mnist example with CNN
+	e. real world example
+		A. image recognition
+		B. object segmentation
+		D. Text sentiment analisis (1D cnn)
+	RNN
+	a. input as output
+	b. mention rnn, gru and lstm
+	c. real world example
+		A. text recognition
+		B. automatic translation (mmmm not so sure)
+		D. chatbots
+	AUTOENCODER
+	a. find compressed representation of input
+	b. real work example
+		a. file compression
+		b TRANSLATION (convert to a "interlingua")
+	VARIATIONAL AUTOENCODER
+	a. find compressed representation of input and LATENT variable
+	b. real work example
+		A. fraud detection
+		B. image generation
+	ADVERSARIAL NETWORK
+	a. generator
+	b. discriminator
+	c. real work example
+		A. image generation
+		
+10. complex models
+	Up to now, we have seen functioning examples of networks that can do well a "relatively simple" task. For more articulated tasl, you may have different network contributing to the resulttion of different parts of the same problem
+	MENTION SOME NICE EXAMPLE HERE (Alexa from Amazon? In general bots are good example of this, because they have to perform multiple task at once
+									Object segmentation? proposal net, ....)

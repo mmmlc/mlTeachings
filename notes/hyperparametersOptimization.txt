@@ -1,0 +1,9 @@
+1. concept of hyperparameter
+
+2. manual search
+
+3. grid search
+
+4. random search
+
+5. bayesian search

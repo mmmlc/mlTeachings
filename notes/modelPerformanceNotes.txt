@@ -1,0 +1,55 @@
+Narrative for the model performance section
+
+preamble. there is a very strong entanglement between accuracy metric and loss metrics. 
+You want low losses and high accuracies.
+
+As far as I am concerned, models are trained through optimizing a loss function, but are (not always but very often) appraised according to a accuacy metric.
+Why not always use one of the two? I have no clear answer to that.
+A clear understading of loss function is crucial to have an idea of how a ML algorithm actually works, and the discourse naturally arises while speaking of accuracy.
+I am not mentioning loss metrix here, anyway.
+
+0. present a caret confusionmatrix() output. what all those things means?
+
+1. confusion matrix (hit matrix) - START WITH THE MULTIVARIATE CASE
+2. definition of TP (true positive) and TN true negative
+3. definition of accuracy
+4. definition of precision
+
+4. now the problem: accuracy paradox (i.e. what happens when the classes are unbalanced) - BACK TO TWO DIMENSION FOR MORE CLARITY
+	- what is PREVALENCE ? explain class unbalance
+	- accuracy is fine as long as we do have balanced dataset (for instance in credit risk this is not the case! defaulters are few less than performing clients)
+5. introduce the concept of NO INFORMATION RATE, i.e. the accuracy performance of a random classifier (the so-called [in two dimension] the "coin toss classifier")
+
+6. clarify the accuracy paradox by presenting the concept of
+	- sensitivity, recall, hit rate, TRUE POSITIVE RATE: TP/(TP+FN)
+		- how good am i at classifying positive as positive? TYPE II ERROR (false negative)
+	- specificity, true negative rate
+		- how good am i at classifying negative as non-positive. introduce TYPE I ERROR (false positive)
+		
+	this is a fun meme https://www.google.it/search?q=sensitivity+and+specificity+meme&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjWkerwpM7aAhVDkCwKHS90Bn4Q_AUICigB&biw=1440&bih=893#imgrc=jP8gjd-51yul4M:
+	
+	
+	- depending on the problem, type I or type II error may be more relevant, but in general, there is a good trade off between the two
+		- in spam identification, i am better off with a high specificity, because I do not want to identify useful mail as spam
+		- in disease diagnostic, i do am better off with a high specificity, because I do not want to prescribe medicine if they are not needed.
+			you do not want to go through chemio unless strictly necessary
+			- however sometimes, e.g. if you are a blood donor, you absolutely do not want to use the ematic component of a donor which is not suited to donated.
+				this is why test needs to be extremely sensitive. this comes at a cost of reducing specificity, as i am more likely to identify a false positive.
+				fun fact: you had to see my mother when she received a letter from the blood donor association where they told my sample was rejected as I ended up being positive to Syphilis
+
+7. extend the idea of sensitivity, specificity and no information rate to a multiclass setting
+	- each variable is POSITIVE, all others are NEGATIVES. this holds for all the variables
+	
+8. is there a way to have an indicator net of agnostic to the effect of prevalence?
+	- introduce Cohen's K (ACCURACY - NO INFO RATE)/(1 - NO INFO RATE)
+	- introduce balanced accuracy
+	- introduce ROC (with possibly a nice digression on who Receivers were).
+	- introduce GINI idx / Accuracy Ratio
+	
+9. extend to multivariate case
+ - when sample are unbalanced
+	- Volume under surface. TOO COMPLEX
+	- weighted ROC. exampleç toxic comment classification
+ - when sample unbalance is less important (image recognition)
+	- accuracy is fine (in mnist the sample is e.g. perfectly balanced)
+	- object segmentation (IoU [interxection over union]) <- which pixels belongs to a certain object?
