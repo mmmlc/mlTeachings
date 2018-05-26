@@ -12,6 +12,7 @@ suppressMessages(
     require(rattle)
     require(Metrics)
     require(AUC)
+	require(plotly)
   }
 )
 
