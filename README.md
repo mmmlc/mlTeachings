@@ -13,3 +13,11 @@
 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=1_5_dt.ipynb?urlpath=tree) DT
 
 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=1_6_titanic.ipynb?urlpath=tree) Titanic Example
+
+___
+
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=2_1_ModelPerformance.ipynb?urlpath=tree) Model Performance
+
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=2_2_TrainingStrategies.ipynb?urlpath=tree) Training Strategies
+
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/master?filepath=2_3_HyperparameterOptimization.ipynb?urlpath=tree) Hyperparameter Optimization
