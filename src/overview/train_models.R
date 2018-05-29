@@ -16,8 +16,8 @@ train_models = function(methods,
       
       model[[method]][[type]] = methods[[method]](data[[type]]$x_train,
                                                   data[[type]]$y_train$class %>% factor,
-                                                  data[[type]]$x_val,
-                                                  data[[type]]$y_val$class %>% factor)
+                                                  data[[type]]$x_test,
+                                                  data[[type]]$y_test$class %>% factor)
       
     }
   }

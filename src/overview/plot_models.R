@@ -9,7 +9,7 @@ plot_models <- function(data, model){
       df <- data[[data_name]] 
       rbind(
         df$full_train %>% mutate(partition = "train"),
-        df$full_val %>% mutate(partition = "val")
+        df$full_test %>% mutate(partition = "test")
       )
     }
   ) %>% bind_rows
@@ -104,7 +104,7 @@ data_df <- lapply(
     df <- df[[data_name]] 
     rbind(
       df$full_train %>% mutate(partition = "train"),
-      df$full_val %>% mutate(partition = "val")
+      df$full_test %>% mutate(partition = "test")
     )
   }
 ) %>% bind_rows
