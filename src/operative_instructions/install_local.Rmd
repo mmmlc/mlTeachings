@@ -49,7 +49,9 @@ install.packages(c('rmarkdown',
                    'nnet',
                    'RSNNS',
                    'Metrics',
-                   'AUC')
+                   'AUC',
+                   'plotly',
+                   'rBayesianOptimization')
 )
 ```
 
