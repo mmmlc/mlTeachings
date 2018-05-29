@@ -104,10 +104,10 @@ get_partitioned_df = function(get_dataset = get_full_dataset(),
     partitioned_df[[tp]]$x_train =  partitioned_df[[tp]]$full %>% dplyr::select(x,y) %>% slice(partition) %>% data.frame
     partitioned_df[[tp]]$y_train =  partitioned_df[[tp]]$full %>% dplyr::select(class) %>% slice(partition)
     
-    partitioned_df[[tp]]$full_val =  partitioned_df[[tp]]$full %>% slice(-partition)
+    partitioned_df[[tp]]$full_test =  partitioned_df[[tp]]$full %>% slice(-partition)
     
-    partitioned_df[[tp]]$x_val = partitioned_df[[tp]]$full %>% dplyr::select(x,y) %>% slice(-partition)
-    partitioned_df[[tp]]$y_val = partitioned_df[[tp]]$full %>% dplyr::select(class) %>% slice(-partition)
+    partitioned_df[[tp]]$x_test = partitioned_df[[tp]]$full %>% dplyr::select(x,y) %>% slice(-partition)
+    partitioned_df[[tp]]$y_test = partitioned_df[[tp]]$full %>% dplyr::select(class) %>% slice(-partition)
     
   }
   
