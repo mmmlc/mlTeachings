@@ -13,6 +13,7 @@ suppressMessages(
     require(Metrics)
     require(AUC)
 	require(plotly)
+	require(rBayesianOptimization)
   }
 )
 
