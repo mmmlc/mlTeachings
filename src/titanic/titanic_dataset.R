@@ -38,3 +38,5 @@ get_titanic_df <- function(filter = F) {
         y_test = test %>% mutate(class = factor(ifelse(survived == 1, "Yes", "Not"))) %>% select(class)
     )
 }
+
+
