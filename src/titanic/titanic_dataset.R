@@ -15,7 +15,7 @@ titanic_data_processing = function(df){
     # mutate_all(scale) # normalize data
 }
 
-get_titanic_df <- function() {
+get_titanic_df <- function(filter = F) {
     # import the data
     titanic_df = read_csv('data/titanic.csv', col_types = cols())
     
@@ -26,6 +26,11 @@ get_titanic_df <- function() {
     train = titanic_df %>% slice(partition) %>% titanic_data_processing
     test = titanic_df %>% slice(-partition) %>% titanic_data_processing
 
+    if(filter){
+    train = train %>% filter(sex == 2, age > 18, age < 40)
+    test = test %>% filter(sex == 2, age > 18, age < 40)
+    }
+    
     list(
         x_train = train %>% select(-one_of('survived')),
         y_train = train %>% mutate(class = factor(ifelse(survived == 1, "Yes", "Not"))) %>% select(class),

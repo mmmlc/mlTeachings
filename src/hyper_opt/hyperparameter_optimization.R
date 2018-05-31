@@ -88,7 +88,21 @@ kknn::kknn()
 
 #####
 
-
+((tune_grid_large = expand.grid(kmax = 5, 
+                                kernel = c('rectangular',
+                                           'triangular',
+                                           'epanechnikov',
+                                           'biweight',
+                                           'triweight',
+                                           'cos',
+                                           'inv',
+                                           'gaussian',
+                                           'rank',
+                                           'optimal'),
+                                distance = c(0.1, 0.5, 1, 2, 10)
+)
+)
+) %>% nrow %>% paste('This tune grid has ', ., ' rows!')
 
 (long_tune_grid = data.frame(kmax = seq_len(20) %>% rep(each = 50),
                         kernel = c('rectangular' %>% rep(5),
@@ -115,8 +129,8 @@ kknn::kknn()
 model = train(x = train %>% select(-one_of('survived')),
               y = train %>% select(one_of('survived')) %>% pull %>% factor,
               method = 'kknn',
-              tuneGrid = long_tune_grid,
-              tuneLenght = 50,
+              tuneGrid = tune_grid_large,
+              tuneLenght = 12,
               trControl = trainControl(search = 'random', verboseIter = T)
 )
 
