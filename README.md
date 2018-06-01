@@ -16,8 +16,10 @@
 
 ___
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_1_ModelPerformance.ipynb?urlpath=tree) Model Performance
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_1_BiasVariance.ipynb?urlpath=tree) Bias Variance
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_2_TrainingStrategies.ipynb?urlpath=tree) Training Strategies
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_2_ModelPerformance.ipynb?urlpath=tree) Model Performance
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_3_HyperparameterOptimization.ipynb?urlpath=tree) Hyperparameter Optimization
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_3_ModelSelection.ipynb?urlpath=tree) Model Selection
+
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_4_HyperparameterOptimization.ipynb?urlpath=tree) Hyperparameter Optimization
