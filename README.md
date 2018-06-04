@@ -29,4 +29,4 @@ ___
 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=3_1_DeepLearningIntro.ipynb?urlpath=tree) Deep Learning Intro
 
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=3_2_NNetMath.ipynb?urlpath=tree) Neural Net Maths
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=3_2_NnetMath.ipynb?urlpath=tree) Neural Net Maths
