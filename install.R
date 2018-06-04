@@ -15,6 +15,8 @@ install.packages('nnet')
 install.packages('RSNNS')
 install.packages('Metrics')
 install.packages('AUC')
+install.packages('plotly')
+install.packages('rBayesianOptimization')
 
 tensorflow::install_tensorflow()
 keras::install_keras()

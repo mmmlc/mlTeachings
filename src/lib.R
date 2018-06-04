@@ -12,13 +12,18 @@ suppressMessages(
     require(rattle)
     require(Metrics)
     require(AUC)
+	require(plotly)
+	require(rBayesianOptimization)
   }
 )
 
 
 # install_keras()
 
+source('src/utilities/list_functions_package.R')
+
 source('src/overview/make_dataset.R')
+source('src/titanic/titanic_dataset.R')
 
 source('src/overview/train_models.R')
 source('src/overview/plot_models.R')

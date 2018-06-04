@@ -1,9 +1,9 @@
 ---
 title: "On your device"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -49,7 +49,9 @@ install.packages(c('rmarkdown',
                    'nnet',
                    'RSNNS',
                    'Metrics',
-                   'AUC')
+                   'AUC',
+                   'plotly',
+                   'rBayesianOptimization')
 )
 ```
 
@@ -165,6 +167,12 @@ install.packages(c('tensorflow',
 
 tensorflow::install_tensorflow()
 keras::install_keras() # this may throw an error but work anyway
+```
+
+### 4. Save and Load trained models
+Run the follwing in the command line.
+```{r, engine='sh', eval=FALSE}
+pip install h5py
 ```
 
 ___

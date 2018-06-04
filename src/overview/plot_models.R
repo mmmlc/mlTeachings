@@ -9,7 +9,7 @@ plot_models <- function(data, model){
       df <- data[[data_name]] 
       rbind(
         df$full_train %>% mutate(partition = "train"),
-        df$full_val %>% mutate(partition = "val")
+        df$full_test %>% mutate(partition = "test")
       )
     }
   ) %>% bind_rows
@@ -83,7 +83,7 @@ plot_models <- function(data, model){
 }
 
 
-plot_model = function(df, data_name, model){
+plot_model = function(df, data_name, model, only_train = T){
 ## prepare prediction
 
 from <- 0
@@ -104,10 +104,14 @@ data_df <- lapply(
     df <- df[[data_name]] 
     rbind(
       df$full_train %>% mutate(partition = "train"),
-      df$full_val %>% mutate(partition = "val")
+      df$full_test %>% mutate(partition = "test")
     )
   }
 ) %>% bind_rows
+
+if(only_train) {
+  data_df <- data_df %>% filter(partition != "val")
+}
 
 ## plot data
 ggplot() + 
