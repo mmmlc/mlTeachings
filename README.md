@@ -32,3 +32,9 @@ ___
 
 
 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=3_2_NnetMath.ipynb?urlpath=tree) Neural Net Maths
+
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=3_3_Regularization.ipynb?urlpath=tree) Regularization
+
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=3_4_CNN.ipynb?urlpath=tree) CNN
+
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=3_5_RNN.ipynb?urlpath=tree) RNN
