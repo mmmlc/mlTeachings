@@ -94,7 +94,8 @@ grid_df <- expand.grid(
   y = seq(from, to, length.out = n)
 )
 
-grid_df$prob = model %>% predict(grid_df %>% select(x,y), type = 'prob') %>% select(prob = class_1)
+grid_df$prob = model %>% predict(grid_df %>% select(x,y), type = 'prob') %>% 
+  select(prob = class_1) %>% pull(prob)
 
 ## Prepare plot dataset
 
