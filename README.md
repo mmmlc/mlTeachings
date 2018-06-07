@@ -24,7 +24,7 @@ ___
 
 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_4_HyperparameterOptimization.ipynb?urlpath=tree) Hyperparameter Optimization
 
-[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_4_CreditCardFraud.ipynb?urlpath=tree) Credit Card Fraud Example
+[![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_5_CreditCardFraud.ipynb?urlpath=tree) Credit Card Fraud Example
 
 ___
 
