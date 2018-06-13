@@ -1,9 +1,8 @@
 # **Machine Learning in R**: *a Hands-on Experience*
-[Gabriele Bonomi](https://www.linkedin.com/in/gabrielebonomi/), [Fabio Colombo](https://www.linkedin.com/in/fabio-colombo-50bbba20/), [Luca Mammi](https://www.linkedin.com/in/lucamammi/)
-
-0.1 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=0_teaser.ipynb?urlpath=tree) Teaser
-
 ___
+[Gabriele Bonomi](https://www.linkedin.com/in/gabrielebonomi/), [Fabio Colombo](https://www.linkedin.com/in/fabio-colombo-50bbba20/), [Luca Mammi](https://www.linkedin.com/in/lucamammi/)
+___
+0.1 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=0_teaser.ipynb?urlpath=tree) Teaser
 
 ## **Session** *1*
 
@@ -19,7 +18,6 @@ ___
 
 1.6 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=1_6_titanic.ipynb?urlpath=tree) Titanic Example
 
-___
 # **Session** *2*
 
 2.1 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_1_BiasVariance.ipynb?urlpath=tree) Bias Variance
@@ -32,7 +30,6 @@ ___
 
 2.5 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_5_CreditCardFraud.ipynb?urlpath=tree) Credit Card Fraud Example
 
-___
 # **Session** 3*
 
 3.1 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=3_1_NNIntro.ipynb?urlpath=tree) Introduction to Neural Networks
