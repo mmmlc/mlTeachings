@@ -1,16 +1,15 @@
 ---
 title: '**Machine Learning in R**: *a Hands-on Experience*'
-author: "'[Gabriele Bonomi](https://www.linkedin.com/in/gabrielebonomi/), [Fabio Colombo](https://www.linkedin.com/in/fabio-colombo-50bbba20/),"
-  [Luca Mammi](https://www.linkedin.com/in/lucamammi/)'
+author: '[Gabriele Bonomi](https://www.linkedin.com/in/gabrielebonomi/), [Fabio Colombo](https://www.linkedin.com/in/fabio-colombo-50bbba20/), [Luca Mammi](https://www.linkedin.com/in/lucamammi/)'
 date: "May - June **2018**"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ___
 
-### 0.1 [Teaser Trailer](https://goo.gl/tfbB1a)
+### 0.1 [Teaser Trailer](https://goo.gl/5rhLYK)
 
 ___
 
