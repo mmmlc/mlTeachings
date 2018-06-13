@@ -16,7 +16,7 @@
 
 ***1.6.***  [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=1_6_titanic.ipynb?urlpath=tree) Titanic Example
 
-# **Session** *2*
+## **Session** *2*
 
 ***2.1.***  [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_1_BiasVariance.ipynb?urlpath=tree) Bias Variance
 
@@ -28,7 +28,7 @@
 
 ***2.5.***  [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=2_5_CreditCardFraud.ipynb?urlpath=tree) Credit Card Fraud Example
 
-# **Session** 3*
+## **Session** 3*
 
 ***3.1.***  [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=3_1_NNIntro.ipynb?urlpath=tree) Introduction to Neural Networks
 
