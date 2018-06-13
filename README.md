@@ -1,6 +1,6 @@
 # **Machine Learning in R**: *a Hands-on Experience*
 
-***0.1***  [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=0_teaser.ipynb?urlpath=tree) Teaser
+***0.1.***  [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=0_teaser.ipynb?urlpath=tree) Teaser
 
 ## **Session** *1*
 
