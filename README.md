@@ -1,7 +1,5 @@
 # **Machine Learning in R**: *a Hands-on Experience*
-___
-[Gabriele Bonomi](https://www.linkedin.com/in/gabrielebonomi/), [Fabio Colombo](https://www.linkedin.com/in/fabio-colombo-50bbba20/), [Luca Mammi](https://www.linkedin.com/in/lucamammi/)
-___
+
 0.1 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=0_teaser.ipynb?urlpath=tree) Teaser
 
 ## **Session** *1*
