@@ -1,8 +1,11 @@
 ---
-title: "**Machine Learning in R**: *a hands-on experience*"
-author: "[Gabriele Bonomi](https://www.linkedin.com/in/gabrielebonomi/), [Fabio Colombo](https://www.linkedin.com/in/fabio-colombo-50bbba20/), [Luca Mammi](https://www.linkedin.com/in/lucamammi/)"
+title: '**Machine Learning in R**: *a Hands-on Experience*'
+author: "'[Gabriele Bonomi](https://www.linkedin.com/in/gabrielebonomi/), [Fabio Colombo](https://www.linkedin.com/in/fabio-colombo-50bbba20/),"
+  [Luca Mammi](https://www.linkedin.com/in/lucamammi/)'
 date: "May - June **2018**"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ___
@@ -11,23 +14,21 @@ ___
 
 ___
 
-
-
 # **Session** *1*
 #### *The Basics*
 
-### 1.1 [Introduction to the Tidyverse](https://goo.gl/6nemLy)
-### 1.2 [Machine Learning Libraries in $\texttt{R}$](https://goo.gl/tchc7X)
-### 1.3 [K Nearest Neighbors](https://goo.gl/PDp2Yi)
-### 1.4 [Support Vector Machines](https://goo.gl/tLHcv8)
+### 1.1 [Introduction to the Tidyverse](https://goo.gl/MWHjw4)
+### 1.2 [Machine Learning Libraries in $\texttt{R}$](https://goo.gl/JQn9DB)
+### 1.3 [K Nearest Neighbors](https://goo.gl/1CTbkX)
+### 1.4 [Support Vector Machines](https://goo.gl/Ne75mZ)
 ### 1.5 [Tree-based Models](https://goo.gl/YaAi7s)
-### 1.6 [*Titanic* Dataset](https://goo.gl/5WxZTZ)
+### 1.6 [*Titanic* Dataset](https://goo.gl/yv2R46)
 ___
 # **Session** *2*
 ##### *Traning Strategies et al.*
 
-### 2.1 [The Bias-Variance Tradeoff](https://goo.gl/3bXPU6)
-### 2.2 [Model Performance](https://goo.gl/YLAksi)
+### 2.1 [Bias-Variance Tradeoff](https://goo.gl/3bXPU6)
+### 2.2 [Model Performance](https://goo.gl/yv2R46)
 ### 2.3 [Model Selection](https://goo.gl/YkMmvr)
 ### 2.4 [Hyperparameter Optimization](https://goo.gl/zGa4GR)
 ### 2.5 [*Credit Card Fraud* Dataset](https://goo.gl/dy7To6)
