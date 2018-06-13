@@ -21,6 +21,7 @@ suppressMessages(
 # install_keras()
 
 source('src/utilities/list_functions_package.R')
+source('src/utilities/range01.R')
 
 source('src/overview/make_dataset.R')
 source('src/titanic/titanic_dataset.R')
