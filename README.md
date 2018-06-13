@@ -4,7 +4,7 @@
 
 ## **Session** *1*
 
-***1.1*** [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=1_1_intro_tidyverse.ipynb?urlpath=tree) Tidyverse
+***1.1.*** [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=1_1_intro_tidyverse.ipynb?urlpath=tree) Tidyverse
 
 1.2 [![Binder](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/gbonomib/mlTeachings/dev?filepath=1_2_mlpackages.ipynb?urlpath=tree) ML Packages
 
